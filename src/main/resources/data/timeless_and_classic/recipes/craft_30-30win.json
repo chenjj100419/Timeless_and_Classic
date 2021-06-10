@@ -1,0 +1,17 @@
+{
+  "type": "cgm:workbench",
+  "result": {
+    "item": "timeless_and_classic:win_30-30",
+    "count":4
+  },
+  "materials": [
+    {
+      "item": "minecraft:iron_ingot",
+      "count": 6
+    },
+    {
+      "item": "minecraft:gunpowder",
+      "count": 4
+    }
+  ]
+}

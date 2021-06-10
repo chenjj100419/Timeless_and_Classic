@@ -1,0 +1,12 @@
+{
+  "required": true,
+  "package": "timeless_and_classic.core.mixin",
+  "compatibilityLevel": "JAVA_8",
+  "minVersion": "0.8",
+  "refmap": "timeless_and_classic.refmap.json",
+  "mixins": [],
+  "client": [],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

@@ -1,0 +1,65 @@
+{
+	"credit": "Made with Blockbench",
+	"textures": {
+		"2": "timeless_and_classic:items/m1911_lower",
+		"particle": "models:lower"
+	},
+	"elements": [
+		{
+			"name": "magezine",
+			"from": [6.75, -9.4375, 11.625],
+			"to": [9.25, -8.8125, 15.8125],
+			"rotation": {"angle": -22.5, "axis": "x", "origin": [8, 2.96875, 14.3125]},
+			"faces": {
+				"north": {"uv": [0, 3, 3, 3.875], "texture": "#2", "tintindex": 0},
+				"east": {"uv": [0, 3, 4.375, 3.875], "texture": "#2", "tintindex": 0},
+				"south": {"uv": [0, 3, 3, 3.875], "texture": "#2", "tintindex": 0},
+				"west": {"uv": [0, 3, 4.375, 3.875], "texture": "#2", "tintindex": 0},
+				"up": {"uv": [0, 0, 3, 4.375], "texture": "#2", "tintindex": 0},
+				"down": {"uv": [0, 3, 3, 7.375], "texture": "#2", "tintindex": 0}
+			}
+		},
+		{
+			"name": "magezine",
+			"from": [6.875, -8.82202, 12.07716],
+			"to": [9.125, 11.30298, 15.76466],
+			"rotation": {"angle": -22.5, "axis": "x", "origin": [8, 3.08423, 14.26466]},
+			"faces": {
+				"north": {"uv": [2, 0, 5, 0.875], "texture": "#2", "tintindex": 0},
+				"east": {"uv": [1, 0, 5.375, 0.875], "texture": "#2", "tintindex": 0},
+				"south": {"uv": [0, 3, 4, 4], "texture": "#2", "tintindex": 0},
+				"west": {"uv": [5, 0, 9.375, 0.875], "texture": "#2", "tintindex": 0},
+				"up": {"uv": [0, 0, 3, 4.375], "texture": "#2", "tintindex": 0},
+				"down": {"uv": [0, 2, 3, 6.375], "texture": "#2", "tintindex": 0}
+			}
+		}
+	],
+	"display": {
+		"thirdperson_righthand": {
+			"translation": [0, -0.75, 0.25],
+			"scale": [0.4, 0.4, 0.4]
+		},
+		"firstperson_righthand": {
+			"rotation": [1, 0, 0],
+			"translation": [0, -2, -10]
+		},
+		"ground": {
+			"scale": [0.5, 0.5, 0.5]
+		},
+		"gui": {
+			"rotation": [30, -145, 0],
+			"translation": [-1, -1, 0]
+		},
+		"fixed": {
+			"rotation": [0, 90, 0],
+			"translation": [2, -2.5, -2]
+		}
+	},
+	"groups": [
+		{
+			"name": "lower",
+			"origin": [8, 8, 8],
+			"children": [0, 1]
+		}
+	]
+}

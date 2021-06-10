@@ -1,0 +1,28 @@
+{
+  "type": "cgm:workbench",
+  "result": {
+    "item": "timeless_and_classic:magnumbox"
+  },
+  "materials": [
+    {
+      "item": "minecraft:iron_ingot",
+      "count": 32
+    },
+    {
+      "item": "minecraft:paper",
+      "count": 8
+    },
+    {
+      "item": "minecraft:gunpowder",
+      "count": 32
+    },
+    {
+      "item": "minecraft:diamond",
+      "count": 1
+    },
+    {
+      "item": "minecraft:sunflower",
+      "count": 1
+    }
+  ]
+}

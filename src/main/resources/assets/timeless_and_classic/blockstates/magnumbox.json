@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "timeless_and_classic:block/magnumbox"
+    },
+    "facing=east": {
+      "model": "timeless_and_classic:block/magnumbox",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "timeless_and_classic:block/magnumbox",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "timeless_and_classic:block/magnumbox",
+      "y": 270
+    }
+  }
+}

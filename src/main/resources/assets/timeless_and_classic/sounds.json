@@ -1,0 +1,20 @@
+{
+  "item.fire_m1911": {
+    "subtitle": "subtitle.fire_1911",
+    "sounds": [
+      { "name": "timeless_and_classic:item/1911_firefinal" }
+    ]
+  },
+  "item.fire_m1911s": {
+    "subtitle": "subtitle.fire_1911",
+    "sounds": [
+      { "name": "timeless_and_classic:item/1911supressed_fire" }
+    ]
+  },
+  "item.fire_mosin-nagant": {
+    "subtitle": "subtitle.fire_mosin-nagant_fire",
+    "sounds": [
+      { "name": "timeless_and_classic:item/mosin-nagant_fire" }
+    ]
+  }
+}

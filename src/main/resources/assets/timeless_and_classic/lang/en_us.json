@@ -1,0 +1,18 @@
+{
+  "item.timeless_and_classic.m1911": "M1911",
+  "item.timeless_and_classic.m1894": "M1894",
+  "item.timeless_and_classic.m1851": "M1851",
+  "item.timeless_and_classic.round45": ".45 ACP Bullet",
+  "item.timeless_and_classic.magnumround": ".357 Magnum Bullet",
+  "item.timeless_and_classic.win_30-30": ".30-30 Winchester",
+  "item.timeless_and_classic.box45": "Box of .45 ACP Bullets",
+  "item.timeless_and_classic.magnumbox": "Box of .357 Magnum Bullets",
+  "item.timeless_and_classic.m1928": "M1928",
+  "item.timeless_and_classic.mosin": "Mosin Nagant",
+
+  "block.timeless_and_classic.box45": "Box of .45 ACP Bullets (x16)",
+  "block.timeless_and_classic.magnumbox": "Box of .357 Magnum Bullets (x12)",
+  "block.timeless_and_classic.win30-30box": "Box of .30-30 Winchester Bullets (x10)",
+
+  "itemGroup.timeless_and_classic": "Timeless and Classics!"
+}

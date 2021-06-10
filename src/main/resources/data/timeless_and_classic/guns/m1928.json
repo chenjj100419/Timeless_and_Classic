@@ -1,0 +1,49 @@
+{
+  "general": {
+    "auto": true,
+    "rate": 2,
+    "gripType": "timeless_and_classic:two_handed_m1928",
+    "maxAmmo": 30,
+    "reloadAmount": 5,
+    "recoilAngle": 3.0,
+    "recoilKick": 1,
+    "recoilAdsReduction": 0.65,
+    "alwaysSpread": true,
+    "spread": 3.9
+  },
+  "projectile": {
+    "item": "timeless_and_classic:round45",
+    "visible": false,
+    "damage": 4.5,
+    "size": 0.2,
+    "speed": 17.5,
+    "life": 350
+  },
+  "sounds": {
+    "fire": "cgm:item.pistol.fire",
+    "reload": "cgm:item.pistol.reload",
+    "cock": "cgm:item.pistol.cock",
+    "silencedFire": "cgm:item.pistol.silenced_fire"
+  },
+  "display": {
+    "flash": {
+      "yOffset": 8.8,
+      "zOffset": -17.95,
+      "size": 0.7
+    }
+  },
+  "modules": {
+    "zoom": {
+      "fovModifier": 0.6,
+      "yOffset": 10.1,
+      "zOffset": -3.6
+    },
+    "attachments": {
+      "barrel": {
+        "yOffset": 8.8,
+        "zOffset": -17.95,
+        "scale": 0.75
+      }
+    }
+  }
+}
