@@ -18,8 +18,6 @@ import net.minecraft.world.IBlockReader;
 import java.util.Collections;
 import java.util.List;
 
-// Testing new local systems (ClumsyAlien)
-// Testing cleaned repo
 public class box_45 extends BreakableBlock {
     public static final DirectionProperty FACING = HorizontalBlock.HORIZONTAL_FACING;
     public box_45(final Properties properties) {
