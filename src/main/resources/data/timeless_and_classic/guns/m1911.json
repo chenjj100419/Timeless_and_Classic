@@ -4,8 +4,8 @@
     "gripType": "timeless_and_classic:one_handed_m1911",
     "maxAmmo": 8,
     "reloadAmount": 2,
-    "recoilAngle": 10.5,
-    "recoilKick": 3,
+    "recoilAngle": 12.0,
+    "recoilKick": 2,
     "recoilAdsReduction": 0.28,
     "alwaysSpread": true,
     "spread": 3.9

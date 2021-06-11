@@ -1,6 +1,6 @@
 {
   "general": {
-    "rate": 21,
+    "rate": 28,
     "gripType": "timeless_and_classic:one_handed_m1851",
     "maxAmmo": 6,
     "reloadAmount": 1,
@@ -8,12 +8,12 @@
     "recoilKick": 2,
     "recoilAdsReduction": 0.3,
     "alwaysSpread": true,
-    "spread": 2.9
+    "spread": 2.4
   },
   "projectile": {
     "item": "timeless_and_classic:magnumround",
     "visible": false,
-    "damage": 19.5,
+    "damage": 18.5,
     "size": 0.2,
     "speed": 7.5,
     "life": 300

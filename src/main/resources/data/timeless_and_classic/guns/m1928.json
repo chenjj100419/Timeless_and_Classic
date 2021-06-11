@@ -5,11 +5,11 @@
     "gripType": "timeless_and_classic:two_handed_m1928",
     "maxAmmo": 30,
     "reloadAmount": 5,
-    "recoilAngle": 3.0,
+    "recoilAngle": 3.5,
     "recoilKick": 1,
-    "recoilAdsReduction": 0.65,
+    "recoilAdsReduction": 0.68,
     "alwaysSpread": true,
-    "spread": 3.9
+    "spread": 4.2
   },
   "projectile": {
     "item": "timeless_and_classic:round45",
