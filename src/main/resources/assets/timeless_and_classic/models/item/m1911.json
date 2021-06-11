@@ -1,5 +1,5 @@
 {
-	"credit": "Made with Blockbench, follow @CraneNeko on Twitter, the creator of this epic/texture!",
+	"credit": "Made with Blockbench",
 	"textures": {
 		"2": "timeless_and_classic:items/m1911_lower",
 		"3": "timeless_and_classic:items/m1911_upper"
@@ -670,8 +670,7 @@
 			"translation": [0, -2, -10]
 		},
 		"ground": {
-			"translation": [0, 10, -4.5],
-			"scale": [1.58, 1.58, 1.58]
+			"scale": [0.5, 0.5, 0.5]
 		},
 		"gui": {
 			"rotation": [30, -145, 0],
