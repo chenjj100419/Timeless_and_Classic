@@ -115,10 +115,10 @@ public class TwoHandedPoseHighRes_ak47 extends WeaponPose {
         matrixStack.translate(reloadProgress * 1.5, -reloadProgress, -reloadProgress * 1.5);
 
         int side = hand.opposite() == HandSide.RIGHT ? 1 : -1;
-        matrixStack.translate(10.0 * side * 0.0625, -1.395, -0.45);
+        matrixStack.translate(8.5 * side * 0.0625, -1.015, -0.04);
 
         if (Minecraft.getInstance().player.getSkinType().equals("slim") && hand.opposite() == HandSide.LEFT) {
-            matrixStack.translate(0.22125F * -side, -2.15, -1.65);
+            matrixStack.translate(0.22125F * -side, -1.55, -1.0);
         }
 
         matrixStack.rotate(Vector3f.XP.rotationDegrees(80F));
@@ -136,10 +136,10 @@ public class TwoHandedPoseHighRes_ak47 extends WeaponPose {
             centerOffset += hand == HandSide.RIGHT ? 0.2 : 0.8;
         }
         centerOffset = hand == HandSide.RIGHT ? -centerOffset : centerOffset;
-        matrixStack.translate(centerOffset * 0.0825, -0.65, -1.475);
+        matrixStack.translate(centerOffset * 0.0405, -0.745, -1.075);
 
         matrixStack.rotate(Vector3f.XP.rotationDegrees(80F));
-        matrixStack.scale(0.5F, 0.5F, 0.5F);
+        matrixStack.scale(1F, 1F, 1F);
 
         RenderUtil.renderFirstPersonArm(player, hand, matrixStack, buffer, light);
     }
@@ -147,5 +147,9 @@ public class TwoHandedPoseHighRes_ak47 extends WeaponPose {
     @Override
     public boolean applyOffhandTransforms(PlayerEntity player, PlayerModel model, ItemStack stack, MatrixStack matrixStack, float partialTicks) {
         return GripType.applyBackTransforms(player, matrixStack);
+    }
+    @Override
+    public boolean canApplySprintingAnimation() {
+        return true;
     }
 }

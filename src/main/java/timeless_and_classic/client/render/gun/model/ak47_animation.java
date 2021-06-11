@@ -45,7 +45,8 @@ public class ak47_animation implements IOverrideModel {
             float cooldownOg = tracker.getCooldown(stack.getItem(), Minecraft.getInstance().getRenderPartialTicks());
             float cooldown = (float) easeInOutBack(cooldownOg);
 
-            matrices.translate(0, 0, 0.248f * cooldown);
+            // Math provided by Bomb787 on GitHub and Curseforge!!!
+            matrices.translate(0, 0, 0.298f * (-4.5 * Math.pow(cooldown-0.5, 2) + 1));
 
             RenderUtil.renderModel(SpecialModels.AK47_BOLT.getModel(), stack, matrices, renderBuffer, light, overlay);
 

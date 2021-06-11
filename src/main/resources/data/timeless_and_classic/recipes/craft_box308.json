@@ -1,0 +1,20 @@
+{
+  "type": "cgm:workbench",
+  "result": {
+    "item": "timeless_and_classic:box_308-block"
+  },
+  "materials": [
+    {
+      "item": "minecraft:iron_ingot",
+      "count": 28
+    },
+    {
+      "item": "minecraft:gunpowder",
+      "count": 32
+    },
+    {
+      "item": "minecraft:sunflower",
+      "count": 1
+    }
+  ]
+}

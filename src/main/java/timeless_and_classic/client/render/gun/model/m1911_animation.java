@@ -39,31 +39,25 @@ public class m1911_animation implements IOverrideModel {
         {
             RenderUtil.renderModel(SpecialModels.M1911_STANDARD_MAG.getModel(), stack, matrices, renderBuffer, light, overlay);
         }
+
         RenderUtil.renderModel(SpecialModels.M1911.getModel(), stack, matrices, renderBuffer, light, overlay);
-        //if (entity.equals(Minecraft.getInstance().player)) {
 
             //Always push
             matrices.push();
-            //Here we're moving the model into position
-            matrices.translate(0, -5.7 * 0.0625, 0);
 
-
-            //We're getting the cooldown tracker for the item - items like the sword, ender pearl, and chorus fruit all have this too.
             CooldownTracker tracker = Minecraft.getInstance().player.getCooldownTracker();
             float cooldown = tracker.getCooldown(stack.getItem(), Minecraft.getInstance().getRenderPartialTicks());
             cooldown = (float) easeInOutBack(cooldown);
 
-            // We rotate the chamber part of the model according to the cooldown variable above, which is manipulated by the method provided below.
-            // matrices.rotate(Vector3f.ZN.rotationDegrees(45F * cooldown));
-            matrices.translate(0, 0, 0.6f * cooldown);
-            //Then move it
-            matrices.translate(0, 5.8 * 0.0625, 0);
-            //Render the chamber part of the gun
+            matrices.translate(0.00, 0.0, 0.046);
+
+            // Math provided by Bomb787 on GitHub and Curseforge!!!
+            matrices.translate(0, 0, 0.4f * (-4.5 * Math.pow(cooldown-0.5, 2) + 1));
+
             RenderUtil.renderModel(SpecialModels.M1911_SLIDE.getModel(), stack, matrices, renderBuffer, light, overlay);
 
             //Always pop
             matrices.pop();
-        //}
     }
 
     //Same method from GrenadeLauncherModel, to make a smooth rotation of the chamber.

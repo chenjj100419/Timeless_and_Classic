@@ -1,9 +1,12 @@
 package timeless_and_classic.core.registry;
 
 import net.minecraft.block.Block;
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.CompoundNBT;
 import net.minecraftforge.registries.ObjectHolder;
 import timeless_and_classic.blocks.magnum_box_item;
 import timeless_and_classic.core.timeless_and_classic;
@@ -111,12 +114,17 @@ public class ItemRegistry {
         return false;
     }});
 
-    public static final RegistryObject<GunItem> AK47 = ITEM_REGISTRY.register("ak47", () -> new GunItem(new Item.Properties().maxStackSize(1).group(timeless_and_classic.GROUP)){ public boolean hasEffect(ItemStack stack) {
-        return false;
-    }});
+    public static final RegistryObject<GunItem> AK47 = ITEM_REGISTRY.register("ak47", () -> new GunItem(new Item.Properties().maxStackSize(1).group(timeless_and_classic.GROUP))
+    {
+        public boolean hasEffect(ItemStack stack) {
+            return false;
+        }
+    });
 
     // here I also create some new Ammunition for my mod! Not a necessary piece as you can continue using the original "cgm:" ammo!
     public static final RegistryObject<AmmoItem> MAGNUM_BULLET = ITEM_REGISTRY.register("magnumround", () -> new AmmoItem(new Item.Properties().maxStackSize(64).group(timeless_and_classic.GROUP)));
     public static final RegistryObject<AmmoItem> BULLET_45 = ITEM_REGISTRY.register("round45", () -> new AmmoItem(new Item.Properties().maxStackSize(64).group(timeless_and_classic.GROUP)));
     public static final RegistryObject<AmmoItem> BULLET_30_WIN = ITEM_REGISTRY.register("win_30-30", () -> new AmmoItem(new Item.Properties().maxStackSize(64).group(timeless_and_classic.GROUP)));
-    }
+    public static final RegistryObject<AmmoItem> BULLET_308 = ITEM_REGISTRY.register("bullet_308", () -> new AmmoItem(new Item.Properties().maxStackSize(64).group(timeless_and_classic.GROUP)));
+
+}

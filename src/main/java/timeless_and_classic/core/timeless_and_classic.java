@@ -81,6 +81,7 @@ public class timeless_and_classic {
         GripType.registerType(new CustomGripType(new ResourceLocation("timeless_and_classic", "two_handed_m1894"), new TwoHandedPoseHighRes_m1894()));
         GripType.registerType(new CustomGripType(new ResourceLocation("timeless_and_classic", "two_handed_m1928"), new TwoHandedPoseHighRes_m1928()));
         GripType.registerType(new CustomGripType(new ResourceLocation("timeless_and_classic", "two_handed_mosin"), new TwoHandedPoseHighRes_mosin()));
+        GripType.registerType(new CustomGripType(new ResourceLocation("timeless_and_classic", "two_handed_ak47"), new TwoHandedPoseHighRes_ak47()));
     }
 
     void clientSetup(FMLClientSetupEvent event) {
@@ -94,6 +95,7 @@ public class timeless_and_classic {
         RenderTypeLookup.setRenderLayer(ModBlocks.MAGNUMBOX.get(), RenderType.getCutout());
         RenderTypeLookup.setRenderLayer(ModBlocks.BOX_45.get(), RenderType.getCutout());
         RenderTypeLookup.setRenderLayer(ModBlocks.BOX_WIN_30.get(), RenderType.getCutout());
+        RenderTypeLookup.setRenderLayer(ModBlocks.BOX_308.get(), RenderType.getCutout());
     }
 
 

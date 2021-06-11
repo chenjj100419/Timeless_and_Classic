@@ -45,14 +45,17 @@ public class mosin_animation implements IOverrideModel {
                 matrices.translate(0.088, 0.08, 0.00);
                 matrices.rotate(Vector3f.ZN.rotationDegrees(-90F));
 
+                // matrices.translate(0, 0, 0.318f * (-4.5 * Math.pow(cooldownOg +0.19 -0.5, 2) + 1));
+
                 if (cooldownOg < 0.64 && cooldownOg > 0.32)
                 {
                     matrices.translate(0, 0, 0.318f * ((1.0 * -cooldown)+1));
                 }
                 if (cooldownOg < 0.32)
                 {
-                    matrices.translate(0, 0, 0.868f * ((1.0 * cooldownOg)));
+                    matrices.translate(0, 0, 0.898f * ((1.0 * cooldownOg)));
                 }
+
             }
 
             RenderUtil.renderModel(SpecialModels.MOSIN_BOLT.getModel(), stack, matrices, renderBuffer, light, overlay);

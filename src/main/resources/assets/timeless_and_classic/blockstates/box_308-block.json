@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "timeless_and_classic:block/box_308-block"
+    },
+    "facing=east": {
+      "model": "timeless_and_classic:block/box_308-block",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "timeless_and_classic:block/box_308-block",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "timeless_and_classic:block/box_308-block",
+      "y": 270
+    }
+  }
+}

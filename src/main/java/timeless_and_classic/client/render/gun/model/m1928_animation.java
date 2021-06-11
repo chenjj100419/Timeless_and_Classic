@@ -47,7 +47,7 @@ public class m1928_animation implements IOverrideModel {
             float cooldownOg = tracker.getCooldown(stack.getItem(), Minecraft.getInstance().getRenderPartialTicks());
             float cooldown = (float) easeInOutBack(cooldownOg);
 
-            matrices.translate(0, 0, 0.248f * cooldown);
+            matrices.translate(0, 0, 0.238f * cooldown);
 
             RenderUtil.renderModel(SpecialModels.M1928_BOLT.getModel(), stack, matrices, renderBuffer, light, overlay);
 
