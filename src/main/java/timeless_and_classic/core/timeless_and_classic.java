@@ -82,6 +82,8 @@ public class timeless_and_classic {
         GripType.registerType(new CustomGripType(new ResourceLocation("timeless_and_classic", "two_handed_m1928"), new TwoHandedPoseHighRes_m1928()));
         GripType.registerType(new CustomGripType(new ResourceLocation("timeless_and_classic", "two_handed_mosin"), new TwoHandedPoseHighRes_mosin()));
         GripType.registerType(new CustomGripType(new ResourceLocation("timeless_and_classic", "two_handed_ak47"), new TwoHandedPoseHighRes_ak47()));
+        GripType.registerType(new CustomGripType(new ResourceLocation("timeless_and_classic", "two_handed_m60"), new TwoHandedPoseHighRes_m60()));
+
     }
 
     void clientSetup(FMLClientSetupEvent event) {
@@ -91,6 +93,9 @@ public class timeless_and_classic {
         ModelOverrides.register(ItemRegistry.M1928.get(), new m1928_animation());
         ModelOverrides.register(ItemRegistry.MOSIN.get(), new mosin_animation());
         ModelOverrides.register(ItemRegistry.AK47.get(), new ak47_animation());
+        ModelOverrides.register(ItemRegistry.M60.get(), new m60_animation());
+
+
 
         RenderTypeLookup.setRenderLayer(ModBlocks.MAGNUMBOX.get(), RenderType.getCutout());
         RenderTypeLookup.setRenderLayer(ModBlocks.BOX_45.get(), RenderType.getCutout());
