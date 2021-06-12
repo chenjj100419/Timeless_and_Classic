@@ -10,12 +10,11 @@ import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.registries.ObjectHolder;
 import timeless_and_classic.client.SpecialModels;
+import timeless_and_classic.client.handlers.HClient;
 import timeless_and_classic.client.render.gun.model.*;
 import timeless_and_classic.client.render.pose.*;
 import timeless_and_classic.common.CustomGripType;
-import timeless_and_classic.core.registry.ItemRegistry;
-import timeless_and_classic.core.registry.ModBlocks;
-import timeless_and_classic.core.registry.SoundRegistry;
+import timeless_and_classic.core.registry.*;
 import timeless_and_classic.common.CustomGripType;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
@@ -26,7 +25,6 @@ import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
-
 
 
 /**
@@ -68,6 +66,8 @@ public class timeless_and_classic {
         ItemRegistry.ITEM_REGISTRY.register(bus);
         ModBlocks.REGISTER.register(bus);
         SoundRegistry.SOUND_REGISTRY.register(bus);
+        TileEntities.REGISTER.register(bus);
+        TimelessContainers.REGISTER.register(bus);
         //Call the setup methods from below and add them to the bus
         bus.addListener(this::commonSetup);
         bus.addListener(this::clientSetup);
@@ -95,7 +95,7 @@ public class timeless_and_classic {
         ModelOverrides.register(ItemRegistry.AK47.get(), new ak47_animation());
         ModelOverrides.register(ItemRegistry.M60.get(), new m60_animation());
 
-
+        HClient.setup();
 
         RenderTypeLookup.setRenderLayer(ModBlocks.MAGNUMBOX.get(), RenderType.getCutout());
         RenderTypeLookup.setRenderLayer(ModBlocks.BOX_45.get(), RenderType.getCutout());

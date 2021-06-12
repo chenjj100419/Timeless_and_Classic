@@ -1,5 +1,6 @@
 package timeless_and_classic.core.registry;
 
+import com.mrcrayfish.guns.GunMod;
 import net.minecraft.block.SoundType;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
@@ -31,11 +32,18 @@ public class ModBlocks {
     public static final RegistryObject<Block> BOX_45 = register45("box45", () -> new box_45(Block.Properties.create(Material.IRON).sound(SoundType.METAL).hardnessAndResistance(1f, 10f).setLightLevel(s -> 0).notSolid().setOpaque((bs, br, bp) -> false)));
     public static final RegistryObject<Block> BOX_WIN_30 = registerwin30("win30-30box", () -> new win_30_box(Block.Properties.create(Material.IRON).sound(SoundType.METAL).hardnessAndResistance(1f, 10f).setLightLevel(s -> 0).notSolid().setOpaque((bs, br, bp) -> false)));
     public static final RegistryObject<Block> BOX_308 = register308("box_308-block", () -> new box_308(Block.Properties.create(Material.IRON).sound(SoundType.METAL).hardnessAndResistance(1f, 10f).setLightLevel(s -> 0).notSolid().setOpaque((bs, br, bp) -> false)));
+    public static final RegistryObject<Block> TIMELESS_WORKBENCH = register("timeless_workbench", () -> new Timeless_Workbench(Block.Properties.create(Material.IRON).sound(SoundType.METAL).hardnessAndResistance(1f, 10f).setLightLevel(s -> 0).notSolid().setOpaque((bs, br, bp) -> false)));
 
     /*
         Here I am doing something quite hacky, each box_item has completely different reactions on a rightclick event, I decided to just quickly create 3 separate new classes...
         Each class (magnum_box_item , box_45_item , win_30_box_item) all has a rightClick event, and give different bullet types according to the block type!
     */
+
+    private static <T extends Block> RegistryObject<T> register(String id, Supplier<T> blockSupplier) // Basic Registry system, used for creating a basic BlockItem!!!
+    {
+        return register(id, blockSupplier, block1 -> new BlockItem(block1, new Item.Properties().group(GunMod.GROUP)));
+    }
+
     private static <T extends Block> RegistryObject<T> registerMagnum(String id, Supplier<T> blockSupplier)
     {
         return register(id, blockSupplier, block1 -> new magnum_box_item(block1, new Item.Properties().maxStackSize(8).group(timeless_and_classic.GROUP)));
