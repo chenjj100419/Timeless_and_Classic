@@ -68,6 +68,7 @@ public class timeless_and_classic {
         SoundRegistry.SOUND_REGISTRY.register(bus);
         TileEntities.REGISTER.register(bus);
         TimelessContainers.REGISTER.register(bus);
+        TimelessRecipeRegistry.REGISTER.register(bus);
         //Call the setup methods from below and add them to the bus
         bus.addListener(this::commonSetup);
         bus.addListener(this::clientSetup);

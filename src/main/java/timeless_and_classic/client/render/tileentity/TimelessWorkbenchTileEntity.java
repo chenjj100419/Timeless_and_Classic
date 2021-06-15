@@ -22,7 +22,7 @@ import javax.annotation.Nullable;
 
 public class TimelessWorkbenchTileEntity extends SyncedTileEntity implements IStorageBlock
 {
-    private NonNullList<ItemStack> inventory = NonNullList.withSize(1, ItemStack.EMPTY);
+    private final NonNullList<ItemStack> inventory = NonNullList.withSize(1, ItemStack.EMPTY);
 
     public TimelessWorkbenchTileEntity()
     {

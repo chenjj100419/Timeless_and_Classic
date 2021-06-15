@@ -1,20 +1,20 @@
 {
-  "type": "cgm:workbench",
+  "type": "timeless_and_classic:timeless_workbench",
   "result": {
     "item": "timeless_and_classic:magnumbox"
   },
   "materials": [
     {
       "item": "minecraft:iron_ingot",
-      "count": 32
+      "count": 2
     },
     {
       "item": "minecraft:paper",
-      "count": 8
+      "count": 4
     },
     {
       "item": "minecraft:gunpowder",
-      "count": 32
+      "count": 3
     },
     {
       "item": "minecraft:diamond",

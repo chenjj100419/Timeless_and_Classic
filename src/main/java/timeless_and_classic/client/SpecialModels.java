@@ -44,12 +44,12 @@ public enum SpecialModels {
     AK47_BOLT("ak47_bolt"),
     M60("m60"),
     M60_sMAG("m60_standard_mag"),
-    M60_eMAG("m60_extended_mag");
-
+    M60_eMAG("m60_extended_mag"),
+    AK47_OPTIC_MOUNT("ak47_mount");
 
     //Variables
-    private ResourceLocation modelLocation;
-    private boolean specialModel;
+    private final ResourceLocation modelLocation;
+    private final boolean specialModel;
     @OnlyIn(Dist.CLIENT)
     private IBakedModel cachedModel;
 

@@ -11,13 +11,14 @@ import net.minecraft.item.DyeItem;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.math.BlockPos;
 import timeless_and_classic.blocks.Timeless_Workbench;
+import timeless_and_classic.client.handlers.TimelessWorkbenchRecipes;
 import timeless_and_classic.client.render.tileentity.TimelessWorkbenchTileEntity;
 import timeless_and_classic.core.registry.TimelessContainers;
 
 public class TimelessWorkbenchContainer extends Container
 {
-    private TimelessWorkbenchTileEntity workbench;
-    private BlockPos pos;
+    private final TimelessWorkbenchTileEntity workbench;
+    private final BlockPos pos;
 
     public TimelessWorkbenchContainer(int windowId, IInventory playerInventory, TimelessWorkbenchTileEntity workbench)
     {
@@ -25,7 +26,7 @@ public class TimelessWorkbenchContainer extends Container
         this.workbench = workbench;
         this.pos = workbench.getPos();
 
-        int offset = WorkbenchRecipes.isEmpty(workbench.getWorld()) ? 0 : 28;
+        int offset = TimelessWorkbenchRecipes.isEmpty(workbench.getWorld()) ? 0 : 28;
 
         this.addSlot(new Slot(workbench, 0, 174, 18)
         {

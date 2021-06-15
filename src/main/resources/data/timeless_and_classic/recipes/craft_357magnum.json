@@ -1,5 +1,5 @@
 {
-  "type": "cgm:workbench",
+  "type": "timeless_and_classic:timeless_workbench",
   "result": {
     "item": "timeless_and_classic:magnumround",
     "count":6
@@ -7,11 +7,11 @@
   "materials": [
     {
       "item": "minecraft:iron_ingot",
-      "count": 4
+      "count": 2
     },
     {
       "item": "minecraft:gunpowder",
-      "count": 6
+      "count": 3
     },
     {
       "item": "minecraft:diamond",

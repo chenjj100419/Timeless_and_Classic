@@ -5,12 +5,9 @@ import com.mojang.blaze3d.matrix.MatrixStack;
 import com.mojang.blaze3d.platform.GlStateManager;
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.mrcrayfish.guns.client.screen.CheckBox;
-import com.mrcrayfish.guns.client.screen.WorkbenchScreen;
 import com.mrcrayfish.guns.client.util.RenderUtil;
 import com.mrcrayfish.guns.common.NetworkGunManager;
-import com.mrcrayfish.guns.common.container.WorkbenchContainer;
 import com.mrcrayfish.guns.crafting.WorkbenchRecipe;
-import com.mrcrayfish.guns.crafting.WorkbenchRecipes;
 import com.mrcrayfish.guns.init.ModItems;
 import com.mrcrayfish.guns.item.GunItem;
 import com.mrcrayfish.guns.item.IAmmo;
@@ -18,7 +15,6 @@ import com.mrcrayfish.guns.item.IColored;
 import com.mrcrayfish.guns.item.attachment.IAttachment;
 import com.mrcrayfish.guns.network.PacketHandler;
 import com.mrcrayfish.guns.network.message.MessageCraft;
-import com.mrcrayfish.guns.tileentity.WorkbenchTileEntity;
 import com.mrcrayfish.guns.util.InventoryUtil;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.audio.SimpleSound;
@@ -41,8 +37,12 @@ import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraft.util.text.TranslationTextComponent;
 import org.lwjgl.opengl.GL11;
+import timeless_and_classic.client.handlers.TimelessWorkbenchRecipeH;
+import timeless_and_classic.client.handlers.TimelessWorkbenchRecipes;
 import timeless_and_classic.client.render.tileentity.TimelessWorkbenchTileEntity;
 import timeless_and_classic.common.TimelessWorkbenchContainer;
+import timeless_and_classic.core.registry.ItemRegistry;
+import timeless_and_classic.core.registry.ModBlocks;
 
 import java.awt.*;
 import java.util.ArrayList;
@@ -56,11 +56,11 @@ public class TimelessWorkbenchScreen extends ContainerScreen<TimelessWorkbenchCo
     private static boolean showRemaining = false;
 
     private TimelessWorkbenchScreen.Tab currentTab;
-    private List<TimelessWorkbenchScreen.Tab> tabs = new ArrayList<>();
-    private List<TimelessWorkbenchScreen.MaterialItem> materials;
+    private final List<TimelessWorkbenchScreen.Tab> tabs = new ArrayList<>();
+    private final List<TimelessWorkbenchScreen.MaterialItem> materials;
     private List<TimelessWorkbenchScreen.MaterialItem> filteredMaterials;
-    private PlayerInventory playerInventory;
-    private TimelessWorkbenchTileEntity workbench;
+    private final PlayerInventory playerInventory;
+    private final TimelessWorkbenchTileEntity workbench;
     private Button btnCraft;
     private CheckBox checkBoxMaterials;
     private ItemStack displayStack;
@@ -73,21 +73,21 @@ public class TimelessWorkbenchScreen extends ContainerScreen<TimelessWorkbenchCo
         this.xSize = 256;
         this.ySize = 184;
         this.materials = new ArrayList<>();
-        this.createTabs(WorkbenchRecipes.getAll(playerInventory.player.world));
+        this.createTabs(TimelessWorkbenchRecipes.getAll(playerInventory.player.world));
         if(!this.tabs.isEmpty())
         {
             this.ySize += 28;
         }
     }
 
-    private void createTabs(NonNullList<WorkbenchRecipe> recipes)
+    private void createTabs(NonNullList<TimelessWorkbenchRecipeH> recipes)
     {
-        List<WorkbenchRecipe> weapons = new ArrayList<>();
-        List<WorkbenchRecipe> attachments = new ArrayList<>();
-        List<WorkbenchRecipe> ammo = new ArrayList<>();
-        List<WorkbenchRecipe> misc = new ArrayList<>();
+        List<TimelessWorkbenchRecipeH> weapons = new ArrayList<>();
+        List<TimelessWorkbenchRecipeH> attachments = new ArrayList<>();
+        List<TimelessWorkbenchRecipeH> ammo = new ArrayList<>();
+        List<TimelessWorkbenchRecipeH> misc = new ArrayList<>();
 
-        for(WorkbenchRecipe recipe : recipes)
+        for(TimelessWorkbenchRecipeH recipe : recipes)
         {
             ItemStack output = recipe.getItem();
             if(output.getItem() instanceof GunItem)
@@ -110,8 +110,8 @@ public class TimelessWorkbenchScreen extends ContainerScreen<TimelessWorkbenchCo
 
         if(!weapons.isEmpty())
         {
-            ItemStack icon = new ItemStack(ModItems.ASSAULT_RIFLE.get());
-            icon.getOrCreateTag().putInt("AmmoCount", ModItems.ASSAULT_RIFLE.get().getGun().getGeneral().getMaxAmmo());
+            ItemStack icon = new ItemStack(ItemRegistry.AK47.get());
+            icon.getOrCreateTag().putInt("AmmoCount", ItemRegistry.AK47.get().getGun().getGeneral().getMaxAmmo());
             this.tabs.add(new TimelessWorkbenchScreen.Tab(icon, "weapons", weapons));
         }
 
@@ -122,12 +122,12 @@ public class TimelessWorkbenchScreen extends ContainerScreen<TimelessWorkbenchCo
 
         if(!ammo.isEmpty())
         {
-            this.tabs.add(new TimelessWorkbenchScreen.Tab(new ItemStack(ModItems.SHELL.get()), "ammo", ammo));
+            this.tabs.add(new TimelessWorkbenchScreen.Tab(new ItemStack(ItemRegistry.BULLET_308.get()), "ammo", ammo));
         }
 
         if(!misc.isEmpty())
         {
-            this.tabs.add(new TimelessWorkbenchScreen.Tab(new ItemStack(Items.BARRIER), "misc", misc));
+            this.tabs.add(new TimelessWorkbenchScreen.Tab(new ItemStack(ModBlocks.BOX_308.get().asItem()), "misc", misc));
         }
 
         if(!this.tabs.isEmpty())
@@ -189,7 +189,7 @@ public class TimelessWorkbenchScreen extends ContainerScreen<TimelessWorkbenchCo
         this.btnCraft = this.addButton(new Button(this.guiLeft + 195, this.guiTop + 16, 74, 20, new TranslationTextComponent("gui.timeless_and_classic.timeless_workbench.assemble"), button ->
         {
             int index = this.currentTab.getCurrentIndex();
-            WorkbenchRecipe recipe = this.currentTab.getRecipes().get(index);
+            TimelessWorkbenchRecipeH recipe = this.currentTab.getRecipes().get(index);
             ResourceLocation registryName = recipe.getId();
             PacketHandler.getPlayChannel().sendToServer(new MessageCraft(registryName, this.workbench.getPos()));
         }));
@@ -278,7 +278,7 @@ public class TimelessWorkbenchScreen extends ContainerScreen<TimelessWorkbenchCo
 
     private void loadItem(int index)
     {
-        WorkbenchRecipe recipe = this.currentTab.getRecipes().get(index);
+        TimelessWorkbenchRecipeH recipe = this.currentTab.getRecipes().get(index);
         this.displayStack = recipe.getItem().copy();
         this.updateColor();
 
@@ -403,7 +403,7 @@ public class TimelessWorkbenchScreen extends ContainerScreen<TimelessWorkbenchCo
             builder.append(" x ");
             builder.append(currentItem.getCount());
         }
-        this.drawCenteredString(matrixStack, this.font, builder.toString(), startX + 88, startY + 22, Color.WHITE.getRGB());
+        drawCenteredString(matrixStack, this.font, builder.toString(), startX + 88, startY + 22, Color.WHITE.getRGB());
 
         GL11.glEnable(GL11.GL_SCISSOR_TEST);
         RenderUtil.scissor(startX + 8, startY + 17, 160, 70);
@@ -528,10 +528,10 @@ public class TimelessWorkbenchScreen extends ContainerScreen<TimelessWorkbenchCo
     {
         private final ItemStack icon;
         private final String id;
-        private final List<WorkbenchRecipe> items;
+        private final List<TimelessWorkbenchRecipeH> items;
         private int currentIndex;
 
-        public Tab(ItemStack icon, String id, List<WorkbenchRecipe> items)
+        public Tab(ItemStack icon, String id, List<TimelessWorkbenchRecipeH> items)
         {
             this.icon = icon;
             this.id = id;
@@ -558,7 +558,7 @@ public class TimelessWorkbenchScreen extends ContainerScreen<TimelessWorkbenchCo
             return this.currentIndex;
         }
 
-        public List<WorkbenchRecipe> getRecipes()
+        public List<TimelessWorkbenchRecipeH> getRecipes()
         {
             return this.items;
         }

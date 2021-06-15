@@ -17,7 +17,7 @@
     "damage": 8.0,
     "size": 0.2,
     "speed": 25.5,
-    "life": 650
+    "life": 750
   },
   "sounds": {
     "fire": "cgm:item.pistol.fire",
@@ -43,6 +43,11 @@
         "yOffset": 11.3,
         "zOffset": -22.95,
         "scale": 0.76
+      },
+        "scope": {
+          "yOffset": 13.85,
+          "zOffset": 4.6,
+          "scale": 1.3
       }
     }
   }

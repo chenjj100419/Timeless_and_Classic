@@ -115,10 +115,10 @@ public class TwoHandedPoseHighRes_m60 extends WeaponPose {
         matrixStack.translate(reloadProgress * 1.5, -reloadProgress, -reloadProgress * 1.5);
 
         int side = hand.opposite() == HandSide.RIGHT ? 1 : -1;
-        matrixStack.translate(8.5 * side * 0.0625, -1.515, -0.04);
+        matrixStack.translate(10.5 * side * 0.0625, -1.121, -0.04);
 
         if (Minecraft.getInstance().player.getSkinType().equals("slim") && hand.opposite() == HandSide.LEFT) {
-            matrixStack.translate(0.22125F * -side, -1.2, -1.0);
+            matrixStack.translate(0.22125F * -side, -1.55, -1.0);
         }
 
         matrixStack.rotate(Vector3f.XP.rotationDegrees(80F));
@@ -136,7 +136,7 @@ public class TwoHandedPoseHighRes_m60 extends WeaponPose {
             centerOffset += hand == HandSide.RIGHT ? 0.2 : 0.8;
         }
         centerOffset = hand == HandSide.RIGHT ? -centerOffset : centerOffset;
-        matrixStack.translate(centerOffset * 0.0405, -0.745, -1.075);
+        matrixStack.translate(centerOffset * 0.0905, -0.815, -1.075);
 
         matrixStack.rotate(Vector3f.XP.rotationDegrees(80F));
         matrixStack.scale(1F, 1F, 1F);

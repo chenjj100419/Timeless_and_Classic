@@ -2,12 +2,12 @@
   "general": {
     "auto": true,
     "rate": 3,
-    "gripType": "timeless_and_classic:two_handed_ak47",
+    "gripType": "timeless_and_classic:two_handed_m60",
     "maxAmmo": 100,
     "reloadAmount": 5,
-    "recoilAngle": 3.3,
+    "recoilAngle": 3.8,
     "recoilKick": 1,
-    "recoilAdsReduction": 0.40,
+    "recoilAdsReduction": 0.74,
     "alwaysSpread": true,
     "spread": 3.8
   },
@@ -27,8 +27,8 @@
   },
   "display": {
     "flash": {
-      "yOffset": 11.3,
-      "zOffset": -22.95,
+      "yOffset": 5.3,
+      "zOffset": -19.95,
       "size": 0.8
     }
   },

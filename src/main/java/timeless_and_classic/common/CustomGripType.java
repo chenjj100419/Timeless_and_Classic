@@ -58,7 +58,7 @@ public class CustomGripType extends GripType {
     /**
      * The grip type map.
      */
-    private static Map<ResourceLocation, com.mrcrayfish.guns.common.GripType> gripTypeMap = new HashMap<>();
+    private static final Map<ResourceLocation, com.mrcrayfish.guns.common.GripType> gripTypeMap = new HashMap<>();
 
     static {
         registerType(ONE_HANDED_M1911);

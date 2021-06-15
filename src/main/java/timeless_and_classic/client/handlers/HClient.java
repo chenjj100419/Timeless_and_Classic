@@ -29,6 +29,6 @@ public class HClient
     }
     private static void registerScreenFactories()
     {
-        ScreenManager.registerFactory(TimelessContainers.WORKBENCH.get(), TimelessWorkbenchScreen::new);
+        ScreenManager.registerFactory(TimelessContainers. WORKBENCH.get(), TimelessWorkbenchScreen::new);
     }
 }
