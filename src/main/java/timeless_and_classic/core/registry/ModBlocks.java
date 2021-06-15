@@ -1,10 +1,19 @@
 package timeless_and_classic.core.registry;
 
 import com.mrcrayfish.guns.GunMod;
+import net.minecraft.block.BlockState;
 import net.minecraft.block.SoundType;
+import net.minecraft.entity.Entity;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
+import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.IWorld;
+import net.minecraft.world.World;
+import net.minecraft.world.server.ServerWorld;
 import net.minecraftforge.fml.RegistryObject;
+import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 // import com.mrcrayfish.guns.Reference;
@@ -32,7 +41,14 @@ public class ModBlocks {
     public static final RegistryObject<Block> BOX_45 = register45("box45", () -> new box_45(Block.Properties.create(Material.IRON).sound(SoundType.METAL).hardnessAndResistance(1f, 10f).setLightLevel(s -> 0).notSolid().setOpaque((bs, br, bp) -> false)));
     public static final RegistryObject<Block> BOX_WIN_30 = registerwin30("win30-30box", () -> new win_30_box(Block.Properties.create(Material.IRON).sound(SoundType.METAL).hardnessAndResistance(1f, 10f).setLightLevel(s -> 0).notSolid().setOpaque((bs, br, bp) -> false)));
     public static final RegistryObject<Block> BOX_308 = register308("box_308-block", () -> new box_308(Block.Properties.create(Material.IRON).sound(SoundType.METAL).hardnessAndResistance(1f, 10f).setLightLevel(s -> 0).notSolid().setOpaque((bs, br, bp) -> false)));
-    public static final RegistryObject<Block> TIMELESS_WORKBENCH = register("timeless_workbench", () -> new Timeless_Workbench(Block.Properties.create(Material.IRON).sound(SoundType.METAL).hardnessAndResistance(1f, 10f).setLightLevel(s -> 0).notSolid().setOpaque((bs, br, bp) -> false)));
+    public static final RegistryObject<Block> TIMELESS_WORKBENCH = register("timeless_workbench", () -> new Timeless_Workbench(Block.Properties.create(Material.IRON).sound(SoundType.METAL).hardnessAndResistance(1f, 10f).setLightLevel(s -> 0).notSolid().setOpaque((bs, br, bp) -> false))
+    {
+        @Override
+        public void onPlayerDestroy(IWorld worldIn, BlockPos pos, BlockState state)
+        {
+            Block.spawnAsEntity((World) worldIn,pos,TIMELESS_WORKBENCH.get().getItem(worldIn,pos,state));
+        }
+    });
 
     /*
         Here I am doing something quite hacky, each box_item has completely different reactions on a rightclick event, I decided to just quickly create 3 separate new classes...

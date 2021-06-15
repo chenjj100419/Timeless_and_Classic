@@ -28,7 +28,7 @@ public class ak47_animation implements IOverrideModel {
     @Override
     public void render(float v, ItemCameraTransforms.TransformType transformType, ItemStack stack, ItemStack parent, LivingEntity entity, MatrixStack matrices, IRenderTypeBuffer renderBuffer, int light, int overlay) {
 
-        if(Gun.getScope(entity.getHeldItemMainhand()) != null)
+        if(Gun.getScope(stack) != null)
         {
             RenderUtil.renderModel(SpecialModels.AK47_OPTIC_MOUNT.getModel(), stack, matrices, renderBuffer, light, overlay);
         }
