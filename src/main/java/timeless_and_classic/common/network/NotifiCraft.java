@@ -1,6 +1,5 @@
 package timeless_and_classic.common.network;
 
-import com.mrcrayfish.guns.common.network.ServerPlayHandler;
 import com.mrcrayfish.guns.network.message.IMessage;
 import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.network.PacketBuffer;

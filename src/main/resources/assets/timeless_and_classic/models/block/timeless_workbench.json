@@ -11,7 +11,7 @@
 		"7": "timeless_and_classic:items/m1851_dyed",
 		"8": "timeless_and_classic:items/mosin_wood",
 		"7_6": "timeless_and_classic:items/m60_mag",
-		"particle": "models:lower"
+		"particle": "timeless_and_classic:items/mosin_wood"
 	},
 	"elements": [
 		{

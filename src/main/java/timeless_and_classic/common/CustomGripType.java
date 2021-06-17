@@ -1,19 +1,14 @@
 package timeless_and_classic.common;
 
 import com.mojang.blaze3d.matrix.MatrixStack;
-import com.mrcrayfish.guns.Reference;
 import com.mrcrayfish.guns.client.render.IHeldAnimation;
 import com.mrcrayfish.guns.common.GripType;
-import timeless_and_classic.client.render.pose.*;
-//import com.mrcrayfish.guns.client.render.pose.BazookaPose;
-//import com.mrcrayfish.guns.client.render.pose.MiniGunPose;
-//import com.mrcrayfish.guns.client.render.pose.OneHandedPose;
-//import com.mrcrayfish.guns.client.render.pose.TwoHandedPose;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.Items;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.vector.Vector3f;
+import timeless_and_classic.client.render.pose.*;
 
 import java.util.HashMap;
 import java.util.Map;

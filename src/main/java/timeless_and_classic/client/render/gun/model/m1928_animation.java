@@ -3,8 +3,6 @@ package timeless_and_classic.client.render.gun.model;
 import com.mojang.blaze3d.matrix.MatrixStack;
 import com.mrcrayfish.guns.client.render.gun.IOverrideModel;
 import com.mrcrayfish.guns.client.util.RenderUtil;
-import com.mrcrayfish.guns.enchantment.GunEnchantment;
-import com.mrcrayfish.guns.enchantment.OverCapacityEnchantment;
 import com.mrcrayfish.guns.init.ModEnchantments;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.IRenderTypeBuffer;
@@ -13,7 +11,6 @@ import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.CooldownTracker;
-import net.minecraft.util.math.vector.Vector3f;
 import timeless_and_classic.client.SpecialModels;
 
 /*

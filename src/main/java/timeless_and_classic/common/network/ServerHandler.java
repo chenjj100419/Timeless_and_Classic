@@ -1,10 +1,6 @@
 package timeless_and_classic.common.network;
 
-import com.mrcrayfish.guns.common.container.WorkbenchContainer;
-import com.mrcrayfish.guns.crafting.WorkbenchRecipe;
-import com.mrcrayfish.guns.crafting.WorkbenchRecipes;
 import com.mrcrayfish.guns.item.IColored;
-import com.mrcrayfish.guns.tileentity.WorkbenchTileEntity;
 import com.mrcrayfish.guns.util.InventoryUtil;
 import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.inventory.InventoryHelper;
@@ -13,10 +9,17 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
+import timeless_and_classic.client.handlers.TimelessWorkbenchRecipeH;
+import timeless_and_classic.client.handlers.TimelessWorkbenchRecipes;
 import timeless_and_classic.client.render.tileentity.TimelessWorkbenchTileEntity;
-import timeless_and_classic.common.TimelessWorkbenchContainer;
+import timeless_and_classic.client.TimelessWorkbenchContainer;
 
 import java.util.List;
+
+
+/*
+    Original creator Mr.Crayfish - Adjusted for use in TaC by ClumsyAlien
+ */
 
 public class ServerHandler
 {
@@ -24,12 +27,12 @@ public class ServerHandler
     {
         World world = player.world;
 
-        if(player.openContainer instanceof WorkbenchContainer)
+        if(player.openContainer instanceof TimelessWorkbenchContainer)
         {
             TimelessWorkbenchContainer workbench = (TimelessWorkbenchContainer) player.openContainer;
             if(workbench.getPos().equals(pos))
             {
-                WorkbenchRecipe recipe = WorkbenchRecipes.getRecipeById(world, id);
+                TimelessWorkbenchRecipeH recipe = TimelessWorkbenchRecipes.getRecipeById(world, id);
                 if(recipe == null)
                 {
                     return;

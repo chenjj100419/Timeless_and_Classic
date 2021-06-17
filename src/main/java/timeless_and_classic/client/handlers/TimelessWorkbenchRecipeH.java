@@ -1,7 +1,6 @@
 package timeless_and_classic.client.handlers;
 
 import com.google.common.collect.ImmutableList;
-import com.mrcrayfish.guns.tileentity.WorkbenchTileEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.IRecipe;
 import net.minecraft.item.crafting.IRecipeSerializer;

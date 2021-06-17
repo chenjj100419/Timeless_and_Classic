@@ -1,12 +1,12 @@
 
 package timeless_and_classic.core.registry;
 
-import timeless_and_classic.core.timeless_and_classic;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
+import timeless_and_classic.core.timeless_and_classic;
 
 /**
  * Author: ClumsyAlien, codebase and design based off Mr.Pineapple's original addon

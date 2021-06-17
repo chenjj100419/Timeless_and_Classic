@@ -1,8 +1,6 @@
 package timeless_and_classic.core.registry;
 
-import com.mrcrayfish.guns.Reference;
 import com.mrcrayfish.guns.crafting.DyeItemRecipe;
-import com.mrcrayfish.guns.crafting.WorkbenchRecipeSerializer;
 import net.minecraft.item.crafting.IRecipeSerializer;
 import net.minecraft.item.crafting.SpecialRecipeSerializer;
 import net.minecraftforge.fml.RegistryObject;

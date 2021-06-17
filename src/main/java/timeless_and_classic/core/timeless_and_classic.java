@@ -2,22 +2,11 @@ package timeless_and_classic.core;
 
 import com.mrcrayfish.guns.client.render.gun.ModelOverrides;
 import com.mrcrayfish.guns.common.GripType;
-import net.minecraft.block.Block;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.RenderTypeLookup;
-import net.minecraft.util.ResourceLocation;
-import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.api.distmarker.OnlyIn;
-import net.minecraftforge.registries.ObjectHolder;
-import timeless_and_classic.client.SpecialModels;
-import timeless_and_classic.client.handlers.HClient;
-import timeless_and_classic.client.render.gun.model.*;
-import timeless_and_classic.client.render.pose.*;
-import timeless_and_classic.common.CustomGripType;
-import timeless_and_classic.core.registry.*;
-import timeless_and_classic.common.CustomGripType;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.common.Mod;
@@ -25,6 +14,12 @@ import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import timeless_and_classic.client.handlers.HClient;
+import timeless_and_classic.client.render.gun.model.*;
+import timeless_and_classic.client.render.pose.*;
+import timeless_and_classic.common.CustomGripType;
+import timeless_and_classic.common.network.HPacket;
+import timeless_and_classic.core.registry.*;
 
 
 /**
@@ -64,7 +59,7 @@ public class timeless_and_classic {
         //Register the Deferred Register from our Registry classes
         //EntityRegistry.ENTITY_REGISTRY.register(bus);
         ItemRegistry.ITEM_REGISTRY.register(bus);
-        ModBlocks.REGISTER.register(bus);
+        TimelessBlocks.REGISTER.register(bus);
         SoundRegistry.SOUND_REGISTRY.register(bus);
         TileEntities.REGISTER.register(bus);
         TimelessContainers.REGISTER.register(bus);
@@ -84,7 +79,7 @@ public class timeless_and_classic {
         GripType.registerType(new CustomGripType(new ResourceLocation("timeless_and_classic", "two_handed_mosin"), new TwoHandedPoseHighRes_mosin()));
         GripType.registerType(new CustomGripType(new ResourceLocation("timeless_and_classic", "two_handed_ak47"), new TwoHandedPoseHighRes_ak47()));
         GripType.registerType(new CustomGripType(new ResourceLocation("timeless_and_classic", "two_handed_m60"), new TwoHandedPoseHighRes_m60()));
-
+        HPacket.init();
     }
 
     void clientSetup(FMLClientSetupEvent event) {
@@ -95,13 +90,14 @@ public class timeless_and_classic {
         ModelOverrides.register(ItemRegistry.MOSIN.get(), new mosin_animation());
         ModelOverrides.register(ItemRegistry.AK47.get(), new ak47_animation());
         ModelOverrides.register(ItemRegistry.M60.get(), new m60_animation());
+        ModelOverrides.register(ItemRegistry.M1917.get(), new m1917_animation());
 
         HClient.setup();
 
-        RenderTypeLookup.setRenderLayer(ModBlocks.MAGNUMBOX.get(), RenderType.getCutout());
-        RenderTypeLookup.setRenderLayer(ModBlocks.BOX_45.get(), RenderType.getCutout());
-        RenderTypeLookup.setRenderLayer(ModBlocks.BOX_WIN_30.get(), RenderType.getCutout());
-        RenderTypeLookup.setRenderLayer(ModBlocks.BOX_308.get(), RenderType.getCutout());
+        RenderTypeLookup.setRenderLayer(TimelessBlocks.MAGNUMBOX.get(), RenderType.getCutout());
+        RenderTypeLookup.setRenderLayer(TimelessBlocks.BOX_45.get(), RenderType.getCutout());
+        RenderTypeLookup.setRenderLayer(TimelessBlocks.BOX_WIN_30.get(), RenderType.getCutout());
+        RenderTypeLookup.setRenderLayer(TimelessBlocks.BOX_308.get(), RenderType.getCutout());
     }
 
 

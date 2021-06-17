@@ -1,0 +1,41 @@
+{
+  "general": {
+    "rate": 14,
+    "gripType": "timeless_and_classic:one_handed_m1851",
+    "maxAmmo": 6,
+    "reloadAmount": 1,
+    "recoilAngle": 12.5,
+    "recoilKick": 1,
+    "recoilAdsReduction": 0.3,
+    "alwaysSpread": true,
+    "spread": 1.4
+  },
+  "projectile": {
+    "item": "timeless_and_classic:magnumround",
+    "visible": false,
+    "damage": 12.5,
+    "size": 0.2,
+    "speed": 17.5,
+    "life": 300
+  },
+  "sounds": {
+    "fire": "cgm:item.pistol.fire",
+    "reload": "cgm:item.pistol.reload",
+    "cock": "cgm:item.pistol.cock",
+    "silencedFire": "cgm:item.pistol.silenced_fire"
+  },
+  "display": {
+    "flash": {
+      "yOffset": 7.85,
+      "zOffset": -18.19,
+      "size": 1.6
+    }
+  },
+  "modules": {
+    "zoom": {
+      "fovModifier": 0.7,
+      "yOffset": 15.35,
+      "zOffset": -6.1
+    }
+  }
+}

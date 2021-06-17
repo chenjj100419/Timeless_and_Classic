@@ -1,7 +1,5 @@
 package timeless_and_classic.client.render.tileentity;
 
-import com.mrcrayfish.guns.common.container.WorkbenchContainer;
-import com.mrcrayfish.guns.init.ModTileEntities;
 import com.mrcrayfish.guns.tileentity.SyncedTileEntity;
 import com.mrcrayfish.guns.tileentity.inventory.IStorageBlock;
 import net.minecraft.block.BlockState;
@@ -15,7 +13,7 @@ import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.util.NonNullList;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
-import timeless_and_classic.common.TimelessWorkbenchContainer;
+import timeless_and_classic.client.TimelessWorkbenchContainer;
 import timeless_and_classic.core.registry.TileEntities;
 
 import javax.annotation.Nullable;
@@ -26,6 +24,7 @@ public class TimelessWorkbenchTileEntity extends SyncedTileEntity implements ISt
 
     public TimelessWorkbenchTileEntity()
     {
+
         super(TileEntities.TIMELESS_WORKBENCH.get());
     }
 

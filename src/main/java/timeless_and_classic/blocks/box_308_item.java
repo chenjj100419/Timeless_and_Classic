@@ -9,7 +9,6 @@ import net.minecraft.util.Hand;
 import net.minecraft.world.World;
 
 import static timeless_and_classic.core.registry.ItemRegistry.BULLET_308;
-import static timeless_and_classic.core.registry.ItemRegistry.MAGNUM_BULLET;
 
 public class box_308_item extends BlockItem {
     public box_308_item(Block blockIn, Properties builder) {

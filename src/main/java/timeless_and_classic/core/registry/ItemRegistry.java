@@ -1,28 +1,13 @@
 package timeless_and_classic.core.registry;
 
-import net.minecraft.block.Block;
-import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.BlockItem;
-import net.minecraft.item.ItemGroup;
-import net.minecraft.item.ItemStack;
-import net.minecraft.nbt.CompoundNBT;
-import net.minecraftforge.registries.ObjectHolder;
-import timeless_and_classic.blocks.magnum_box_item;
-import timeless_and_classic.core.timeless_and_classic;
-import com.mrcrayfish.guns.GunMod;
-import com.mrcrayfish.guns.common.GunModifiers;
-import com.mrcrayfish.guns.interfaces.IGunModifier;
 import com.mrcrayfish.guns.item.AmmoItem;
-import com.mrcrayfish.guns.item.BarrelItem;
 import com.mrcrayfish.guns.item.GunItem;
-import com.mrcrayfish.guns.item.ScopeItem;
-import com.mrcrayfish.guns.item.attachment.impl.Barrel;
-import com.mrcrayfish.guns.item.attachment.impl.Scope;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
+import timeless_and_classic.core.timeless_and_classic;
 
 
 
@@ -121,6 +106,12 @@ public class ItemRegistry {
         }
     });
     public static final RegistryObject<GunItem> M60 = ITEM_REGISTRY.register("m60", () -> new GunItem(new Item.Properties().maxStackSize(1).group(timeless_and_classic.GROUP))
+    {
+        public boolean hasEffect(ItemStack stack) {
+            return false;
+        }
+    });
+    public static final RegistryObject<GunItem> M1917 = ITEM_REGISTRY.register("m1917", () -> new GunItem(new Item.Properties().maxStackSize(1))
     {
         public boolean hasEffect(ItemStack stack) {
             return false;

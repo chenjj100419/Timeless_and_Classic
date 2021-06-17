@@ -1,10 +1,5 @@
 package timeless_and_classic.client;
 
-import timeless_and_classic.core.registry.ModBlocks;
-import net.minecraft.client.renderer.RenderType;
-import net.minecraft.client.renderer.RenderTypeLookup;
-import timeless_and_classic.core.timeless_and_classic;
-
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.model.IBakedModel;
 import net.minecraft.util.ResourceLocation;
@@ -14,6 +9,7 @@ import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
+import timeless_and_classic.core.timeless_and_classic;
 
 /*
  * This class will be used to register special models (like the grenade launcher)
@@ -45,7 +41,9 @@ public enum SpecialModels {
     M60("m60"),
     M60_sMAG("m60_standard_mag"),
     M60_eMAG("m60_extended_mag"),
-    AK47_OPTIC_MOUNT("ak47_mount");
+    AK47_OPTIC_MOUNT("ak47_mount"),
+    M1917("m1917"),
+    M1917_CYLINDER("m1917_cylinder");
 
     //Variables
     private final ResourceLocation modelLocation;

@@ -4,14 +4,12 @@ import com.google.common.collect.ImmutableList;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonSyntaxException;
-import com.mrcrayfish.guns.crafting.WorkbenchRecipe;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.IRecipeSerializer;
 import net.minecraft.item.crafting.ShapedRecipe;
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.util.JSONUtils;
 import net.minecraft.util.ResourceLocation;
-import timeless_and_classic.core.registry.TimelessRecipeRegistry;
 
 import javax.annotation.Nullable;
 
@@ -30,7 +28,7 @@ public class RecipeSerializer extends net.minecraftforge.registries.ForgeRegistr
             builder.add(stack);
         }
         if(!json.has("result"))
-            throw new JsonSyntaxException("Missing weapon entry");
+            throw new JsonSyntaxException("Missing vehicle entry");
 
         JsonObject resultObject = JSONUtils.getJsonObject(json, "result");
         ItemStack resultItem = ShapedRecipe.deserializeItem(resultObject);

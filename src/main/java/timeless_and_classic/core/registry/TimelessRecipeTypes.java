@@ -1,6 +1,5 @@
 package timeless_and_classic.core.registry;
 
-import com.mrcrayfish.guns.crafting.WorkbenchRecipe;
 import net.minecraft.item.crafting.IRecipe;
 import net.minecraft.item.crafting.IRecipeType;
 import net.minecraft.util.ResourceLocation;

@@ -7,14 +7,14 @@ import com.mojang.blaze3d.systems.RenderSystem;
 import com.mrcrayfish.guns.client.screen.CheckBox;
 import com.mrcrayfish.guns.client.util.RenderUtil;
 import com.mrcrayfish.guns.common.NetworkGunManager;
-import com.mrcrayfish.guns.crafting.WorkbenchRecipe;
-import com.mrcrayfish.guns.init.ModItems;
 import com.mrcrayfish.guns.item.GunItem;
 import com.mrcrayfish.guns.item.IAmmo;
 import com.mrcrayfish.guns.item.IColored;
 import com.mrcrayfish.guns.item.attachment.IAttachment;
 import com.mrcrayfish.guns.network.PacketHandler;
+
 import com.mrcrayfish.guns.network.message.MessageCraft;
+
 import com.mrcrayfish.guns.util.InventoryUtil;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.audio.SimpleSound;
@@ -28,7 +28,6 @@ import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.item.DyeColor;
 import net.minecraft.item.DyeItem;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.Items;
 import net.minecraft.util.NonNullList;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvents;
@@ -40,9 +39,11 @@ import org.lwjgl.opengl.GL11;
 import timeless_and_classic.client.handlers.TimelessWorkbenchRecipeH;
 import timeless_and_classic.client.handlers.TimelessWorkbenchRecipes;
 import timeless_and_classic.client.render.tileentity.TimelessWorkbenchTileEntity;
-import timeless_and_classic.common.TimelessWorkbenchContainer;
+import timeless_and_classic.client.TimelessWorkbenchContainer;
+import timeless_and_classic.common.network.HPacket;
 import timeless_and_classic.core.registry.ItemRegistry;
-import timeless_and_classic.core.registry.ModBlocks;
+import timeless_and_classic.common.network.NotifiCraft;
+import timeless_and_classic.core.registry.TimelessBlocks;
 
 import java.awt.*;
 import java.util.ArrayList;
@@ -117,7 +118,7 @@ public class TimelessWorkbenchScreen extends ContainerScreen<TimelessWorkbenchCo
 
         if(!attachments.isEmpty())
         {
-            this.tabs.add(new TimelessWorkbenchScreen.Tab(new ItemStack(ModItems.LONG_SCOPE.get()), "attachments", attachments));
+            this.tabs.add(new TimelessWorkbenchScreen.Tab(new ItemStack(ItemRegistry.BULLET_30_WIN.get()), "attachments", attachments));
         }
 
         if(!ammo.isEmpty())
@@ -127,7 +128,7 @@ public class TimelessWorkbenchScreen extends ContainerScreen<TimelessWorkbenchCo
 
         if(!misc.isEmpty())
         {
-            this.tabs.add(new TimelessWorkbenchScreen.Tab(new ItemStack(ModBlocks.BOX_308.get().asItem()), "misc", misc));
+            this.tabs.add(new TimelessWorkbenchScreen.Tab(new ItemStack(TimelessBlocks.BOX_308.get().asItem()), "misc", misc));
         }
 
         if(!this.tabs.isEmpty())
@@ -191,7 +192,7 @@ public class TimelessWorkbenchScreen extends ContainerScreen<TimelessWorkbenchCo
             int index = this.currentTab.getCurrentIndex();
             TimelessWorkbenchRecipeH recipe = this.currentTab.getRecipes().get(index);
             ResourceLocation registryName = recipe.getId();
-            PacketHandler.getPlayChannel().sendToServer(new MessageCraft(registryName, this.workbench.getPos()));
+            HPacket.getPlayChannel().sendToServer(new NotifiCraft(registryName, this.workbench.getPos()));
         }));
         this.btnCraft.active = false;
         this.checkBoxMaterials = this.addButton(new CheckBox(this.guiLeft + 172, this.guiTop + 51, new TranslationTextComponent("gui.timeless_and_classic.timeless_workbench.show_remaining")));
