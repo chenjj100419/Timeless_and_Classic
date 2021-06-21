@@ -43,7 +43,12 @@ public enum SpecialModels {
     M60_eMAG("m60_extended_mag"),
     AK47_OPTIC_MOUNT("ak47_mount"),
     M1917("m1917"),
-    M1917_CYLINDER("m1917_cylinder");
+    M1917_CYLINDER("m1917_cylinder"),
+    GLOCK_17("glock_17"),
+    GLOCK_17_SLIDE("glock_17_slide"),
+    GLOCK_17_STANDARD_MAG("glock_17_standard_mag"),
+    GLOCK_17_EXTENDED_MAG("glock_17_extended_mag"),
+    GLOCK_17_SUPPRESSOR_OVERIDE("glock_17_suppressor");
 
     //Variables
     private final ResourceLocation modelLocation;

@@ -4,8 +4,8 @@
     "gripType": "timeless_and_classic:two_handed_mosin",
     "maxAmmo": 5,
     "reloadAmount": 1,
-    "recoilAngle": 28.0,
-    "recoilKick": 0.5,
+    "recoilAngle": 18.0,
+    "recoilKick": 1.5,
     "recoilAdsReduction": 0.75,
     "alwaysSpread": true,
     "spread": 0.2

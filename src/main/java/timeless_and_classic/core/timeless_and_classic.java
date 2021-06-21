@@ -79,6 +79,7 @@ public class timeless_and_classic {
         GripType.registerType(new CustomGripType(new ResourceLocation("timeless_and_classic", "two_handed_mosin"), new TwoHandedPoseHighRes_mosin()));
         GripType.registerType(new CustomGripType(new ResourceLocation("timeless_and_classic", "two_handed_ak47"), new TwoHandedPoseHighRes_ak47()));
         GripType.registerType(new CustomGripType(new ResourceLocation("timeless_and_classic", "two_handed_m60"), new TwoHandedPoseHighRes_m60()));
+
         HPacket.init();
     }
 
@@ -91,6 +92,7 @@ public class timeless_and_classic {
         ModelOverrides.register(ItemRegistry.AK47.get(), new ak47_animation());
         ModelOverrides.register(ItemRegistry.M60.get(), new m60_animation());
         ModelOverrides.register(ItemRegistry.M1917.get(), new m1917_animation());
+        ModelOverrides.register(ItemRegistry.GLOCK_17.get(), new glock_17_animation());
 
         HClient.setup();
 

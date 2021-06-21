@@ -5,8 +5,8 @@
     "gripType": "timeless_and_classic:two_handed_m1928",
     "maxAmmo": 30,
     "reloadAmount": 5,
-    "recoilAngle": 3.5,
-    "recoilKick": 1,
+    "recoilAngle": 3,
+    "recoilKick": 0.25,
     "recoilAdsReduction": 0.68,
     "alwaysSpread": true,
     "spread": 4.2
