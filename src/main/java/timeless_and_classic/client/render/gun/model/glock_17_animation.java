@@ -49,7 +49,7 @@ public class glock_17_animation implements IOverrideModel {
         if(Gun.getAttachment(IAttachment.Type.BARREL,stack).getItem() == ModItems.SILENCER.get())
         {
             RenderUtil.renderModel(SpecialModels.GLOCK_17_SUPPRESSOR_OVERIDE.getModel(), stack, matrices, renderBuffer, light, overlay);
-            GunItem.getItemById(Item.getIdFromItem(stack.getItem())).ge
+            //Gun.getAttachment(IAttachment.Type.BARREL, GunItem.getItemById(Item.getIdFromItem(stack.getItem())).getDefaultInstance())
         }
 
         if(EnchantmentHelper.getEnchantmentLevel(ModEnchantments.OVER_CAPACITY.get(), entity.getHeldItemMainhand()) > 0 && entity.getHeldItemMainhand().isItemEqual(stack))
@@ -70,7 +70,7 @@ public class glock_17_animation implements IOverrideModel {
             float cooldown = tracker.getCooldown(stack.getItem(), Minecraft.getInstance().getRenderPartialTicks());
             cooldown = (float) easeInOutBack(cooldown);
 
-            matrices.translate(0, 0, 0.45f*cooldown);
+            matrices.translate(0, 0, 0.24f * (-4.5 * Math.pow(cooldown-0.5, 2) + 1));
 
             RenderUtil.renderModel(SpecialModels.GLOCK_17_SLIDE.getModel(), stack, matrices, renderBuffer, light, overlay);
 

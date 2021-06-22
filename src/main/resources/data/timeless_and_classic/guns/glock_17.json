@@ -2,13 +2,13 @@
   "general": {
     "rate": 4,
     "gripType": "timeless_and_classic:one_handed_m1911",
-    "maxAmmo": 17,
-    "reloadAmount": 3,
-    "recoilAngle": 4.0,
+    "maxAmmo": 16,
+    "reloadAmount": 4,
+    "recoilAngle": 4.4,
     "recoilKick": 1.0,
-    "recoilAdsReduction": 0.45,
+    "recoilAdsReduction": 0.40,
     "alwaysSpread": true,
-    "spread": 2.5
+    "spread": 1.8
   },
   "projectile": {
     "item": "timeless_and_classic:round45",
@@ -26,22 +26,22 @@
   },
   "display": {
     "flash": {
-      "yOffset": 11.85,
-      "zOffset": -12.19,
-      "size": 1.1
+      "yOffset":9.65,
+      "zOffset":-12.19,
+      "size": 0.7
     }
   },
   "modules": {
     "zoom": {
       "fovModifier": 0.8,
-      "yOffset": 15.0,
-      "zOffset": -12.6
+      "yOffset": 12.25,
+      "zOffset": -10.6
     },
     "attachments": {
       "barrel": {
-        "yOffset": 11.84,
-        "zOffset": -12.18,
-        "scale": 0.00
+        "yOffset": -29.84,
+        "zOffset": -28.18,
+        "scale": 1.00
       }
     }
   }

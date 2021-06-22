@@ -1338,7 +1338,8 @@
 			"scale": [0.4, 0.4, 0.4]
 		},
 		"firstperson_righthand": {
-			"translation": [1, 1, -8]
+			"translation": [0, 0.5, -9.5],
+			"scale": [1.14, 1.14, 1.14]
 		},
 		"ground": {
 			"scale": [0.4, 0.4, 0.4]

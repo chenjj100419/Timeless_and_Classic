@@ -49,7 +49,7 @@ public class m1911_animation implements IOverrideModel {
             float cooldown = tracker.getCooldown(stack.getItem(), Minecraft.getInstance().getRenderPartialTicks());
             cooldown = (float) easeInOutBack(cooldown);
 
-            matrices.translate(0.00, 0.0, 0.046);
+            // matrices.translate(0.00, 0.0, 0.046);
 
             // Math provided by Bomb787 on GitHub and Curseforge!!!
             matrices.translate(0, 0, 0.4f * (-4.5 * Math.pow(cooldown-0.5, 2) + 1));
