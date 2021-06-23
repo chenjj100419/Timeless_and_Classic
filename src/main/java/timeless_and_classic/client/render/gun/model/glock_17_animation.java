@@ -67,10 +67,10 @@ public class glock_17_animation implements IOverrideModel {
             matrices.push();
 
             CooldownTracker tracker = Minecraft.getInstance().player.getCooldownTracker();
-            float cooldown = tracker.getCooldown(stack.getItem(), Minecraft.getInstance().getRenderPartialTicks());
-            cooldown = (float) easeInOutBack(cooldown);
+        float cooldownOg = tracker.getCooldown(stack.getItem(), Minecraft.getInstance().getRenderPartialTicks());
+        float cooldown = (float) easeInOutBack(cooldownOg);
 
-            matrices.translate(0, 0, 0.24f * (-4.5 * Math.pow(cooldown-0.5, 2) + 1));
+            matrices.translate(0, 0, 0.24f * (-4.5 * Math.pow(cooldownOg-0.5, 2) + 1.0));
 
             RenderUtil.renderModel(SpecialModels.GLOCK_17_SLIDE.getModel(), stack, matrices, renderBuffer, light, overlay);
 

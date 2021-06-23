@@ -111,19 +111,30 @@ public class ItemRegistry {
             return false;
         }
     });
-    public static final RegistryObject<GunItem> M1917 = ITEM_REGISTRY.register("m1917", () -> new GunItem(new Item.Properties().maxStackSize(1))
+    public static final RegistryObject<GunItem> M1917 = ITEM_REGISTRY.register("m1917", () -> new GunItem(new Item.Properties().maxStackSize(1).group(timeless_and_classic.GROUP))
     {
         public boolean hasEffect(ItemStack stack) {
             return false;
         }
     });
-    public static final RegistryObject<GunItem> GLOCK_17 = ITEM_REGISTRY.register("glock_17", () -> new GunItem(new Item.Properties().maxStackSize(1))
+    public static final RegistryObject<GunItem> GLOCK_17 = ITEM_REGISTRY.register("glock_17", () -> new GunItem(new Item.Properties().maxStackSize(1).group(timeless_and_classic.GROUP))
     {
         public boolean hasEffect(ItemStack stack) {
             return false;
         }
     });
-
+    public static final RegistryObject<GunItem> DP_28 = ITEM_REGISTRY.register("dp28", () -> new GunItem(new Item.Properties().maxStackSize(1).group(timeless_and_classic.GROUP))
+    {
+        public boolean hasEffect(ItemStack stack) {
+            return false;
+        }
+    });
+    public static final RegistryObject<GunItem> M16A1 = ITEM_REGISTRY.register("m16a1", () -> new GunItem(new Item.Properties().maxStackSize(1).group(timeless_and_classic.GROUP))
+    {
+        public boolean hasEffect(ItemStack stack) {
+            return false;
+        }
+    });
     // here I also create some new Ammunition for my mod! Not a necessary piece as you can continue using the original "cgm:" ammo!
     public static final RegistryObject<AmmoItem> MAGNUM_BULLET = ITEM_REGISTRY.register("magnumround", () -> new AmmoItem(new Item.Properties().maxStackSize(64).group(timeless_and_classic.GROUP)));
     public static final RegistryObject<AmmoItem> BULLET_45 = ITEM_REGISTRY.register("round45", () -> new AmmoItem(new Item.Properties().maxStackSize(64).group(timeless_and_classic.GROUP)));

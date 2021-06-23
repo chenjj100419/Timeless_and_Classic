@@ -93,6 +93,8 @@ public class timeless_and_classic {
         ModelOverrides.register(ItemRegistry.M60.get(), new m60_animation());
         ModelOverrides.register(ItemRegistry.M1917.get(), new m1917_animation());
         ModelOverrides.register(ItemRegistry.GLOCK_17.get(), new glock_17_animation());
+        ModelOverrides.register(ItemRegistry.DP_28.get(), new dp28_animation());
+        ModelOverrides.register(ItemRegistry.M16A1.get(), new m16a1_animation());
 
         HClient.setup();
 

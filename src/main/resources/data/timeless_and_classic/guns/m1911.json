@@ -34,14 +34,14 @@
   "modules": {
     "zoom": {
       "fovModifier": 0.8,
-      "yOffset": 15.0,
+      "yOffset": 12.7,
       "zOffset": -12.6
     },
     "attachments": {
       "barrel": {
-        "yOffset": 11.84,
-        "zOffset": -12.18,
-        "scale": 1.35
+        "yOffset": 9.88,
+        "zOffset": -11.68,
+        "scale": 0.90
       }
     }
   }

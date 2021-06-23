@@ -1,0 +1,12 @@
+{
+  "type": "timeless_and_classic:timeless_workbench",
+  "result": {
+    "item": "timeless_and_classic:glock_17"
+  },
+  "materials": [
+    {
+      "item": "minecraft:iron_ingot",
+      "count": 18
+    }
+  ]
+}

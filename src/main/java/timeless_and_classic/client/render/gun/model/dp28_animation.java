@@ -20,17 +20,14 @@ import timeless_and_classic.client.SpecialModels;
 /**
  * Author: Mr. Pineapple
  */
-public class ak47_animation implements IOverrideModel {
+public class dp28_animation implements IOverrideModel {
 
     @Override
     public void render(float v, ItemCameraTransforms.TransformType transformType, ItemStack stack, ItemStack parent, LivingEntity entity, MatrixStack matrices, IRenderTypeBuffer renderBuffer, int light, int overlay) {
 
-        if(Gun.getScope(stack) != null)
-        {
-            RenderUtil.renderModel(SpecialModels.AK47_OPTIC_MOUNT.getModel(), stack, matrices, renderBuffer, light, overlay);
-        }
-        RenderUtil.renderModel(SpecialModels.AK47.getModel(), stack, matrices, renderBuffer, light, overlay);
+        RenderUtil.renderModel(SpecialModels.DP_28.getModel(), stack, matrices, renderBuffer, light, overlay);
 
+        RenderUtil.renderModel(SpecialModels.DP_28_MAG.getModel(), stack, matrices, renderBuffer, light, overlay);
             //Always push
             matrices.push();
 
@@ -40,9 +37,9 @@ public class ak47_animation implements IOverrideModel {
             float cooldown = (float) easeInOutBack(cooldownOg);
 
             // Math provided by Bomb787 on GitHub and Curseforge!!!
-            matrices.translate(0, 0, 0.278f * (-4.5 * Math.pow(cooldownOg-0.5, 2) + 1));
+            matrices.translate(0, 0, 0.198f * (-4.5 * Math.pow(cooldown-0.5, 2) + 1));
 
-            RenderUtil.renderModel(SpecialModels.AK47_BOLT.getModel(), stack, matrices, renderBuffer, light, overlay);
+            RenderUtil.renderModel(SpecialModels.DP_28_BOLT.getModel(), stack, matrices, renderBuffer, light, overlay);
 
             //Always pop
             matrices.pop();

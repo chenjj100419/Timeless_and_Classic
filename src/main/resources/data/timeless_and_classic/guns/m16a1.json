@@ -1,0 +1,54 @@
+{
+  "general": {
+    "auto": true,
+    "rate": 3,
+    "gripType": "timeless_and_classic:two_handed_ak47",
+    "maxAmmo": 20,
+    "reloadAmount": 5,
+    "recoilAngle": 1.3,
+    "recoilKick": 0.7,
+    "recoilAdsReduction": 0.55,
+    "alwaysSpread": true,
+    "spread": 1.45
+  },
+  "projectile": {
+    "item": "timeless_and_classic:bullet_308",
+    "visible": false,
+    "damage": 6.0,
+    "size": 0.2,
+    "speed": 35.5,
+    "life": 750
+  },
+  "sounds": {
+    "fire": "cgm:item.pistol.fire",
+    "reload": "cgm:item.pistol.reload",
+    "cock": "cgm:item.pistol.cock",
+    "silencedFire": "cgm:item.pistol.silenced_fire"
+  },
+  "display": {
+    "flash": {
+      "yOffset": 9.3,
+      "zOffset": -22.95,
+      "size": 0.8
+    }
+  },
+  "modules": {
+    "zoom": {
+      "fovModifier": 0.65,
+      "yOffset": 10.85,
+      "zOffset": -4.2
+    },
+    "attachments": {
+      "barrel": {
+        "yOffset": 11.3,
+        "zOffset": -22.95,
+        "scale": 0.76
+      },
+        "scope": {
+          "yOffset": 8.65,
+          "zOffset": 8.4,
+          "scale": 1.25
+      }
+    }
+  }
+}

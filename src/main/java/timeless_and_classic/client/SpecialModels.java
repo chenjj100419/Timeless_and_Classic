@@ -48,7 +48,15 @@ public enum SpecialModels {
     GLOCK_17_SLIDE("glock_17_slide"),
     GLOCK_17_STANDARD_MAG("glock_17_standard_mag"),
     GLOCK_17_EXTENDED_MAG("glock_17_extended_mag"),
-    GLOCK_17_SUPPRESSOR_OVERIDE("glock_17_suppressor");
+    GLOCK_17_SUPPRESSOR_OVERIDE("glock_17_suppressor"),
+    DP_28("dp28"),
+    DP_28_MAG("dp28_mag"),
+    DP_28_BOLT("dp28_bolt"),
+    M16_A1("m16a1"),
+    M16_A1_HANDLE("m16a1_handle"),
+    M16_A1_STANDARD_MAG("m16a1_standard_mag"),
+    M16_A1_EXTENDED_MAG("m16a1_extended_mag"),
+    M16_A1_FRONT_SIGHT("m16a1_front_sight");
 
     //Variables
     private final ResourceLocation modelLocation;
