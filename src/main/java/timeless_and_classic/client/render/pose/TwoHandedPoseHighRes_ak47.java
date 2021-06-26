@@ -118,7 +118,7 @@ public class TwoHandedPoseHighRes_ak47 extends WeaponPose {
         matrixStack.translate(8.5 * side * 0.0625, -1.015, -0.04);
 
         if (Minecraft.getInstance().player.getSkinType().equals("slim") && hand.opposite() == HandSide.LEFT) {
-            matrixStack.translate(0.22125F * -side, -1.55, -1.0);
+            matrixStack.translate(0.03125F * -side, 0, 0);
         }
 
         matrixStack.rotate(Vector3f.XP.rotationDegrees(80F));

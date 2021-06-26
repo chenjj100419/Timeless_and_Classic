@@ -56,7 +56,17 @@ public enum SpecialModels {
     M16_A1_HANDLE("m16a1_handle"),
     M16_A1_STANDARD_MAG("m16a1_standard_mag"),
     M16_A1_EXTENDED_MAG("m16a1_extended_mag"),
-    M16_A1_FRONT_SIGHT("m16a1_front_sight");
+    M16_A1_FRONT_SIGHT("m16a1_front_sight"),
+    MK18_BODY("mk18_body"),
+    MK18_BOLT("mk18_bolt"),
+    MK18_SIGHTS("mk18_sights"),
+    MK18_STOCK("mk18_stock"),
+    MK18_STANDARD_MAG("mk18_standard_mag"),
+    STI2011_BODY("sti2011_body"),
+    STI2011_SLIDE("sti2011_slide"),
+    STI2011_STANDARD_MAG("sti2011_standard_mag"),
+    STI2011_RAIL("sti2011_rail"),
+    AK74("ak74");
 
     //Variables
     private final ResourceLocation modelLocation;

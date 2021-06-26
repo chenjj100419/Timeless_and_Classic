@@ -56,22 +56,22 @@ public class TimelessBlocks {
 
     private static <T extends Block> RegistryObject<T> registerMagnum(String id, Supplier<T> blockSupplier)
     {
-        return register(id, blockSupplier, block1 -> new magnum_box_item(block1, new Item.Properties().maxStackSize(8).group(timeless_and_classic.GROUP)));
+        return register(id, blockSupplier, block1 -> new magnum_box_item(block1, new Item.Properties().maxStackSize(16).group(timeless_and_classic.GROUP)));
     }
 
     private static <T extends Block> RegistryObject<T> register308(String id, Supplier<T> blockSupplier)
     {
-        return register(id, blockSupplier, block1 -> new box_308_item(block1, new Item.Properties().maxStackSize(1).maxDamage(7).group(timeless_and_classic.GROUP)));
+        return register(id, blockSupplier, block1 -> new box_308_item(block1, new Item.Properties().maxStackSize(8).group(timeless_and_classic.GROUP)));
     }
 
     private static <T extends Block> RegistryObject<T> register45(String id, Supplier<T> blockSupplier)
     {
-        return register(id, blockSupplier, block1 -> new box_45_item(block1, new Item.Properties().maxStackSize(8).group(timeless_and_classic.GROUP)));
+        return register(id, blockSupplier, block1 -> new box_45_item(block1, new Item.Properties().maxStackSize(16).group(timeless_and_classic.GROUP)));
     }
 
     private static <T extends Block> RegistryObject<T> registerwin30(String id, Supplier<T> blockSupplier)
     {
-        return register(id, blockSupplier, block1 -> new win_30_box_item(block1, new Item.Properties().maxStackSize(8).group(timeless_and_classic.GROUP)));
+        return register(id, blockSupplier, block1 -> new win_30_box_item(block1, new Item.Properties().maxStackSize(16).group(timeless_and_classic.GROUP)));
     }
 
     private static <T extends Block> RegistryObject<T> register(String id, Supplier<T> blockSupplier, @Nullable Function<T, BlockItem> supplier)

@@ -4,11 +4,9 @@ import com.mojang.blaze3d.matrix.MatrixStack;
 import com.mrcrayfish.guns.client.render.gun.IOverrideModel;
 import com.mrcrayfish.guns.client.util.RenderUtil;
 import com.mrcrayfish.guns.common.Gun;
-import com.mrcrayfish.guns.init.ModEnchantments;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.IRenderTypeBuffer;
 import net.minecraft.client.renderer.model.ItemCameraTransforms;
-import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.CooldownTracker;
@@ -22,20 +20,16 @@ import timeless_and_classic.client.SpecialModels;
 /**
  * Author: Mr. Pineapple
  */
-public class m1928_animation implements IOverrideModel {
+public class ak74_animation implements IOverrideModel {
 
     @Override
     public void render(float v, ItemCameraTransforms.TransformType transformType, ItemStack stack, ItemStack parent, LivingEntity entity, MatrixStack matrices, IRenderTypeBuffer renderBuffer, int light, int overlay) {
 
-        if(EnchantmentHelper.getEnchantmentLevel(ModEnchantments.OVER_CAPACITY.get(), entity.getHeldItemMainhand()) > 0 && entity.getHeldItemMainhand().isItemEqual(stack))
+        if(Gun.getScope(stack) != null)
         {
-            RenderUtil.renderModel(SpecialModels.M1928_DRUM_MAG.getModel(), stack, matrices, renderBuffer, light, overlay);
+            RenderUtil.renderModel(SpecialModels.AK47_OPTIC_MOUNT.getModel(), stack, matrices, renderBuffer, light, overlay);
         }
-        else
-        {
-            RenderUtil.renderModel(SpecialModels.M1928_STICK_MAG.getModel(), stack, matrices, renderBuffer, light, overlay);
-        }
-        RenderUtil.renderModel(SpecialModels.M1928.getModel(), stack, matrices, renderBuffer, light, overlay);
+        RenderUtil.renderModel(SpecialModels.AK74.getModel(), stack, matrices, renderBuffer, light, overlay);
 
             //Always push
             matrices.push();
@@ -45,24 +39,23 @@ public class m1928_animation implements IOverrideModel {
             float cooldownOg = tracker.getCooldown(stack.getItem(), Minecraft.getInstance().getRenderPartialTicks());
             float cooldown = (float) easeInOutBack(cooldownOg);
 
-            //matrices.translate(0, 0, 0.22f * (-4.5 * Math.pow(cooldownOg-0.5, 2) + 1.0));
             if(Gun.hasAmmo(stack))
             {
                 // Math provided by Bomb787 on GitHub and Curseforge!!!
-                matrices.translate(0, 0, 0.22f * (-4.5 * Math.pow(cooldownOg-0.5, 2) + 1.0));
+                matrices.translate(0, 0, 0.190f * (-4.5 * Math.pow(cooldownOg-0.5, 2) + 1.0));
             }
             else if(!Gun.hasAmmo(stack))
             {
                 if(cooldownOg > 0.5){
                     // Math provided by Bomb787 on GitHub and Curseforge!!!
-                    matrices.translate(0, 0, 0.22f * (-4.5 * Math.pow(cooldownOg-0.5, 2) + 1.0));
+                    matrices.translate(0, 0, 0.190f * (-4.5 * Math.pow(cooldownOg-0.5, 2) + 1.0));
                 }
                 else
                 {
-                    matrices.translate(0, 0, 0.22f * (-4.5 * Math.pow(0.5-0.5, 2) + 1.0));
+                    matrices.translate(0, 0, 0.190f * (-4.5 * Math.pow(0.5-0.5, 2) + 1.0));
                 }
             }
-            RenderUtil.renderModel(SpecialModels.M1928_BOLT.getModel(), stack, matrices, renderBuffer, light, overlay);
+            RenderUtil.renderModel(SpecialModels.AK47_BOLT.getModel(), stack, matrices, renderBuffer, light, overlay);
 
             //Always pop
             matrices.pop();

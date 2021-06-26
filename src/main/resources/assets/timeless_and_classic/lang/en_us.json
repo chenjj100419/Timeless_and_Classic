@@ -13,6 +13,14 @@
   "item.timeless_and_classic.bullet_308": ".308 Bullet",
   "item.timeless_and_classic.box_308-block": "Box of .308 Bullets",
   "item.timeless_and_classic.m60": "M60",
+  "item.timeless_and_classic.m1917": "M1917",
+  "item.timeless_and_classic.glock_17": "Glock 17",
+  "item.timeless_and_classic.dp28": "DP-28",
+  "item.timeless_and_classic.m16a1": "M16 A1",
+  "item.timeless_and_classic.mk18": "MK 18",
+  "item.timeless_and_classic.sti2011": "STI 2011",
+  "item.timeless_and_classic.ak74": "AK-74",
+
   "item.timeless_and_classic.timeless_workbench": "Rustic Workbench",
 
   "gui.timeless_and_classic.timeless_workbench.assemble": "Assemble",
@@ -29,5 +37,6 @@
   "block.timeless_and_classic.box_308-block": "Box of .308 Bullets (x50x7)",
   "block.timeless_and_classic.timeless_workbench": "Rustic Workbench",
 
-  "itemGroup.timeless_and_classic": "Timeless and Classics!"
+  "itemGroup.timeless_and_classic": "Timeless and Classics!",
+  "itemGroup.timeless_and_modern": "Timeless and Modern!"
 }

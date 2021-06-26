@@ -40,7 +40,7 @@ public class ak47_animation implements IOverrideModel {
             float cooldown = (float) easeInOutBack(cooldownOg);
 
             // Math provided by Bomb787 on GitHub and Curseforge!!!
-            matrices.translate(0, 0, 0.278f * (-4.5 * Math.pow(cooldownOg-0.5, 2) + 1));
+            matrices.translate(0, 0, 0.190f * (-4.5 * Math.pow(cooldownOg-0.5, 2) + 1));
 
             RenderUtil.renderModel(SpecialModels.AK47_BOLT.getModel(), stack, matrices, renderBuffer, light, overlay);
 

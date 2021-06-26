@@ -6,11 +6,11 @@
   "materials": [
     {
       "item": "minecraft:iron_ingot",
-      "count": 16
+      "count": 4
     },
     {
       "item": "minecraft:gunpowder",
-      "count": 10
+      "count": 3
     },
     {
       "item": "minecraft:sunflower",

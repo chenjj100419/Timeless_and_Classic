@@ -111,13 +111,13 @@ public class ItemRegistry {
             return false;
         }
     });
-    public static final RegistryObject<GunItem> M1917 = ITEM_REGISTRY.register("m1917", () -> new GunItem(new Item.Properties().maxStackSize(1).group(timeless_and_classic.GROUP))
+    public static final RegistryObject<GunItem> M1917 = ITEM_REGISTRY.register("m1917", () -> new GunItem(new Item.Properties().maxStackSize(1))//.group(timeless_and_classic.GROUP))
     {
         public boolean hasEffect(ItemStack stack) {
             return false;
         }
     });
-    public static final RegistryObject<GunItem> GLOCK_17 = ITEM_REGISTRY.register("glock_17", () -> new GunItem(new Item.Properties().maxStackSize(1).group(timeless_and_classic.GROUP))
+    public static final RegistryObject<GunItem> GLOCK_17 = ITEM_REGISTRY.register("glock_17", () -> new GunItem(new Item.Properties().maxStackSize(1).group(timeless_and_classic.MODERN_GROUP))
     {
         public boolean hasEffect(ItemStack stack) {
             return false;
@@ -135,7 +135,25 @@ public class ItemRegistry {
             return false;
         }
     });
-    // here I also create some new Ammunition for my mod! Not a necessary piece as you can continue using the original "cgm:" ammo!
+    public static final RegistryObject<GunItem> MK18 = ITEM_REGISTRY.register("mk18", () -> new GunItem(new Item.Properties().maxStackSize(1))//.group(timeless_and_classic.MODERN_GROUP))
+    {
+        public boolean hasEffect(ItemStack stack) {
+            return false;
+        }
+    });
+    public static final RegistryObject<GunItem> STI2011 = ITEM_REGISTRY.register("sti2011", () -> new GunItem(new Item.Properties().maxStackSize(1).group(timeless_and_classic.MODERN_GROUP))
+    {
+        public boolean hasEffect(ItemStack stack) {
+            return false;
+        }
+    });
+    public static final RegistryObject<GunItem> AK74 = ITEM_REGISTRY.register("ak74", () -> new GunItem(new Item.Properties().maxStackSize(1).group(timeless_and_classic.MODERN_GROUP))
+    {
+        public boolean hasEffect(ItemStack stack) {
+            return false;
+        }
+    });
+    // Here I also create some new Ammunition for my mod! Not a necessary piece as you can continue using the original "cgm:" ammo!
     public static final RegistryObject<AmmoItem> MAGNUM_BULLET = ITEM_REGISTRY.register("magnumround", () -> new AmmoItem(new Item.Properties().maxStackSize(64).group(timeless_and_classic.GROUP)));
     public static final RegistryObject<AmmoItem> BULLET_45 = ITEM_REGISTRY.register("round45", () -> new AmmoItem(new Item.Properties().maxStackSize(64).group(timeless_and_classic.GROUP)));
     public static final RegistryObject<AmmoItem> BULLET_30_WIN = ITEM_REGISTRY.register("win_30-30", () -> new AmmoItem(new Item.Properties().maxStackSize(64).group(timeless_and_classic.GROUP)));

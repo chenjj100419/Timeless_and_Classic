@@ -48,7 +48,19 @@ public class timeless_and_classic {
             return stack;
         }
     };
-
+    public static final ItemGroup MODERN_GROUP = new ItemGroup("timeless_and_modern") {
+        //Here we create the icon for the tab
+        //If you wanted a normal item here then you can just return an ItemStack
+        @Override
+        public ItemStack createIcon() {
+            //Get the Item in a new ItemStack
+            ItemStack stack = new ItemStack(ItemRegistry.STI2011.get());
+            //Here we add ammunition to the gun so it doesn't have the re-fill bar under the item
+            stack.getOrCreateTag().putInt("AmmoCount", ItemRegistry.STI2011.get().getGun().getGeneral().getMaxAmmo());
+            //We now return the stack which has added ammunition
+            return stack;
+        }
+    };
     //What needs to be called the the event bus
     public timeless_and_classic() {
         //Here we add the config to the mod - remember to do this for the server and client if you have them
@@ -95,8 +107,16 @@ public class timeless_and_classic {
         ModelOverrides.register(ItemRegistry.GLOCK_17.get(), new glock_17_animation());
         ModelOverrides.register(ItemRegistry.DP_28.get(), new dp28_animation());
         ModelOverrides.register(ItemRegistry.M16A1.get(), new m16a1_animation());
+        ModelOverrides.register(ItemRegistry.MK18.get(), new mk18_animation());
+        ModelOverrides.register(ItemRegistry.STI2011.get(), new sti2011_animation());
+        ModelOverrides.register(ItemRegistry.AK74.get(), new ak74_animation());
+
+
+
 
         HClient.setup();
+
+
 
         RenderTypeLookup.setRenderLayer(TimelessBlocks.MAGNUMBOX.get(), RenderType.getCutout());
         RenderTypeLookup.setRenderLayer(TimelessBlocks.BOX_45.get(), RenderType.getCutout());

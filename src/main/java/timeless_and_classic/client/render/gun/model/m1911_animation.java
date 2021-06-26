@@ -3,6 +3,7 @@ package timeless_and_classic.client.render.gun.model;
 import com.mojang.blaze3d.matrix.MatrixStack;
 import com.mrcrayfish.guns.client.render.gun.IOverrideModel;
 import com.mrcrayfish.guns.client.util.RenderUtil;
+import com.mrcrayfish.guns.common.Gun;
 import com.mrcrayfish.guns.init.ModEnchantments;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.IRenderTypeBuffer;
@@ -49,10 +50,22 @@ public class m1911_animation implements IOverrideModel {
             float cooldownOg = tracker.getCooldown(stack.getItem(), Minecraft.getInstance().getRenderPartialTicks());
             float cooldown = (float) easeInOutBack(cooldownOg);
 
-            // matrices.translate(0.00, 0.0, 0.046);
-
+        if(Gun.hasAmmo(stack))
+        {
             // Math provided by Bomb787 on GitHub and Curseforge!!!
-            matrices.translate(0, 0, 0.24f * (-4.5 * Math.pow(cooldownOg-0.5, 2) + 1.0));
+            matrices.translate(0, 0, 0.240f * (-4.5 * Math.pow(cooldownOg-0.5, 2) + 1.0));
+        }
+        else if(!Gun.hasAmmo(stack))
+        {
+            if(cooldownOg > 0.5){
+                // Math provided by Bomb787 on GitHub and Curseforge!!!
+                matrices.translate(0, 0, 0.240f * (-4.5 * Math.pow(cooldownOg-0.5, 2) + 1.0));
+            }
+            else
+            {
+                matrices.translate(0, 0, 0.260f * (-4.5 * Math.pow(0.5-0.5, 2) + 1.0));
+            }
+        }
 
             RenderUtil.renderModel(SpecialModels.M1911_SLIDE.getModel(), stack, matrices, renderBuffer, light, overlay);
 

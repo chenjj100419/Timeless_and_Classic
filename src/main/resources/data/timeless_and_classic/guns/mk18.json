@@ -3,21 +3,21 @@
     "auto": true,
     "rate": 3,
     "gripType": "timeless_and_classic:two_handed_ak47",
-    "maxAmmo": 20,
-    "reloadAmount": 5,
-    "recoilAngle": 1.35,
-    "recoilKick": 0.75,
-    "recoilAdsReduction": 0.55,
+    "maxAmmo": 30,
+    "reloadAmount": 6,
+    "recoilAngle": 1.55,
+    "recoilKick": 0.6,
+    "recoilAdsReduction": 0.50,
     "alwaysSpread": true,
-    "spread": 1.25
+    "spread": 1.55
   },
   "projectile": {
     "item": "timeless_and_classic:bullet_308",
     "visible": false,
-    "damage": 6.0,
+    "damage": 6.5,
     "size": 0.2,
-    "speed": 35.5,
-    "life": 750
+    "speed": 31.5,
+    "life": 700
   },
   "sounds": {
     "fire": "cgm:item.pistol.fire",
@@ -27,27 +27,32 @@
   },
   "display": {
     "flash": {
-      "yOffset": 7.75,
-      "zOffset": -22.05,
+      "yOffset": 9.3,
+      "zOffset": -22.95,
       "size": 0.8
     }
   },
   "modules": {
     "zoom": {
       "fovModifier": 0.65,
-      "yOffset": 10.85,
+      "yOffset": 8.85,
       "zOffset": -4.2
     },
     "attachments": {
       "barrel": {
-        "yOffset": 7.75,
-        "zOffset": -22.05,
-        "scale": 0.71
+        "yOffset": 11.3,
+        "zOffset": -22.95,
+        "scale": 0.76
       },
         "scope": {
           "yOffset": 8.65,
-          "zOffset": 7.4,
+          "zOffset": 10.4,
           "scale": 1.25
+      },
+      "stock": {
+        "yOffset": 8.65,
+        "zOffset": 8.4,
+        "scale": 0.00
       }
     }
   }
