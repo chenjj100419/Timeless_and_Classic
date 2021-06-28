@@ -110,7 +110,7 @@ public class timeless_and_classic {
         ModelOverrides.register(ItemRegistry.MK18.get(), new mk18_animation());
         ModelOverrides.register(ItemRegistry.STI2011.get(), new sti2011_animation());
         ModelOverrides.register(ItemRegistry.AK74.get(), new ak74_animation());
-
+        ModelOverrides.register(ItemRegistry.M92FS.get(), new m92fs_animation());
 
 
 

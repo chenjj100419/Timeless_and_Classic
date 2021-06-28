@@ -66,7 +66,11 @@ public enum SpecialModels {
     STI2011_SLIDE("sti2011_slide"),
     STI2011_STANDARD_MAG("sti2011_standard_mag"),
     STI2011_RAIL("sti2011_rail"),
-    AK74("ak74");
+    AK74("ak74"),
+    M92FS("m92fs"),
+    M92FS_SLIDE("m92fs_slide"),
+    M92FS_STANDARD_MAG("m92fs_standard_mag"),
+    M92FS_EXTENDED_MAG("m92fs_extended_mag");
 
     //Variables
     private final ResourceLocation modelLocation;

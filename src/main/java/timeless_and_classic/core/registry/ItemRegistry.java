@@ -1,14 +1,17 @@
 package timeless_and_classic.core.registry;
 
+import com.mrcrayfish.guns.common.Gun;
 import com.mrcrayfish.guns.item.AmmoItem;
 import com.mrcrayfish.guns.item.GunItem;
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import timeless_and_classic.core.timeless_and_classic;
-
+import timeless_and_classic.core.types.TimelessGunItem;
 
 
 /**
@@ -76,80 +79,91 @@ public class ItemRegistry {
                 }
             }
     */
-    public static final RegistryObject<GunItem> M1911 = ITEM_REGISTRY.register("m1911", () -> new GunItem(new Item.Properties().maxStackSize(1).group(timeless_and_classic.GROUP))
+    public static final RegistryObject<TimelessGunItem> M1911 = ITEM_REGISTRY.register("m1911", () -> new TimelessGunItem(new Item.Properties().maxStackSize(1).group(timeless_and_classic.GROUP))
     {
         public boolean hasEffect(ItemStack stack) {
             return false;
         }
     });
 
-    public static final RegistryObject<GunItem> M1894 = ITEM_REGISTRY.register("m1894", () -> new GunItem(new Item.Properties().maxStackSize(1).group(timeless_and_classic.GROUP)){ public boolean hasEffect(ItemStack stack) {
+    public static final RegistryObject<TimelessGunItem> M1894 = ITEM_REGISTRY.register("m1894", () -> new TimelessGunItem(new Item.Properties().maxStackSize(1).group(timeless_and_classic.GROUP)){ public boolean hasEffect(ItemStack stack) {
         return false;
     }});
 
-    public static final RegistryObject<GunItem> M1851 = ITEM_REGISTRY.register("m1851", () -> new GunItem(new Item.Properties().maxStackSize(1).group(timeless_and_classic.GROUP)){ public boolean hasEffect(ItemStack stack) {
+    public static final RegistryObject<TimelessGunItem> M1851 = ITEM_REGISTRY.register("m1851", () -> new TimelessGunItem(new Item.Properties().maxStackSize(1).group(timeless_and_classic.GROUP)){ public boolean hasEffect(ItemStack stack) {
         return false;
     }});
 
-    public static final RegistryObject<GunItem> M1928 = ITEM_REGISTRY.register("m1928", () -> new GunItem(new Item.Properties().maxStackSize(1).group(timeless_and_classic.GROUP)){ public boolean hasEffect(ItemStack stack) {
+    public static final RegistryObject<TimelessGunItem> M1928 = ITEM_REGISTRY.register("m1928", () -> new TimelessGunItem(new Item.Properties().maxStackSize(1).group(timeless_and_classic.GROUP)){ public boolean hasEffect(ItemStack stack) {
         return false;
     }});
 
-    public static final RegistryObject<GunItem> MOSIN = ITEM_REGISTRY.register("mosin", () -> new GunItem(new Item.Properties().maxStackSize(1).group(timeless_and_classic.GROUP)){ public boolean hasEffect(ItemStack stack) {
+    public static final RegistryObject<TimelessGunItem> MOSIN = ITEM_REGISTRY.register("mosin", () -> new TimelessGunItem(new Item.Properties().maxStackSize(1).group(timeless_and_classic.GROUP)){ public boolean hasEffect(ItemStack stack) {
         return false;
     }});
 
-    public static final RegistryObject<GunItem> AK47 = ITEM_REGISTRY.register("ak47", () -> new GunItem(new Item.Properties().maxStackSize(1).group(timeless_and_classic.GROUP))
+    public static final RegistryObject<TimelessGunItem> AK47 = ITEM_REGISTRY.register("ak47", () -> new TimelessGunItem(new Item.Properties().maxStackSize(1).group(timeless_and_classic.GROUP))
     {
         public boolean hasEffect(ItemStack stack) {
             return false;
         }
     });
-    public static final RegistryObject<GunItem> M60 = ITEM_REGISTRY.register("m60", () -> new GunItem(new Item.Properties().maxStackSize(1).group(timeless_and_classic.GROUP))
+    public static final RegistryObject<TimelessGunItem> M60 = ITEM_REGISTRY.register("m60", () -> new TimelessGunItem(new Item.Properties().maxStackSize(1).group(timeless_and_classic.GROUP))
     {
         public boolean hasEffect(ItemStack stack) {
             return false;
         }
     });
-    public static final RegistryObject<GunItem> M1917 = ITEM_REGISTRY.register("m1917", () -> new GunItem(new Item.Properties().maxStackSize(1))//.group(timeless_and_classic.GROUP))
+    public static final RegistryObject<TimelessGunItem> M1917 = ITEM_REGISTRY.register("m1917", () -> new TimelessGunItem(new Item.Properties().maxStackSize(1))//.group(timeless_and_classic.GROUP))
     {
         public boolean hasEffect(ItemStack stack) {
             return false;
         }
     });
-    public static final RegistryObject<GunItem> GLOCK_17 = ITEM_REGISTRY.register("glock_17", () -> new GunItem(new Item.Properties().maxStackSize(1).group(timeless_and_classic.MODERN_GROUP))
+    public static final RegistryObject<TimelessGunItem> GLOCK_17 = ITEM_REGISTRY.register("glock_17", () -> new TimelessGunItem(new Item.Properties().maxStackSize(1).group(timeless_and_classic.MODERN_GROUP))
     {
         public boolean hasEffect(ItemStack stack) {
             return false;
         }
     });
-    public static final RegistryObject<GunItem> DP_28 = ITEM_REGISTRY.register("dp28", () -> new GunItem(new Item.Properties().maxStackSize(1).group(timeless_and_classic.GROUP))
+    public static final RegistryObject<TimelessGunItem> DP_28 = ITEM_REGISTRY.register("dp28", () -> new TimelessGunItem(new Item.Properties().maxStackSize(1).group(timeless_and_classic.GROUP))
     {
         public boolean hasEffect(ItemStack stack) {
             return false;
         }
     });
-    public static final RegistryObject<GunItem> M16A1 = ITEM_REGISTRY.register("m16a1", () -> new GunItem(new Item.Properties().maxStackSize(1).group(timeless_and_classic.GROUP))
+    public static final RegistryObject<TimelessGunItem> M16A1 = ITEM_REGISTRY.register("m16a1", () -> new TimelessGunItem(new Item.Properties().maxStackSize(1).group(timeless_and_classic.GROUP))
     {
         public boolean hasEffect(ItemStack stack) {
             return false;
         }
     });
-    public static final RegistryObject<GunItem> MK18 = ITEM_REGISTRY.register("mk18", () -> new GunItem(new Item.Properties().maxStackSize(1))//.group(timeless_and_classic.MODERN_GROUP))
+    public static final RegistryObject<TimelessGunItem> MK18 = ITEM_REGISTRY.register("mk18", () -> new TimelessGunItem(new Item.Properties().maxStackSize(1))//.group(timeless_and_classic.MODERN_GROUP))
     {
         public boolean hasEffect(ItemStack stack) {
             return false;
         }
     });
-    public static final RegistryObject<GunItem> STI2011 = ITEM_REGISTRY.register("sti2011", () -> new GunItem(new Item.Properties().maxStackSize(1).group(timeless_and_classic.MODERN_GROUP))
+    public static final RegistryObject<TimelessGunItem> STI2011 = ITEM_REGISTRY.register("sti2011", () -> new TimelessGunItem(new Item.Properties().maxStackSize(1).group(timeless_and_classic.MODERN_GROUP))
     {
         public boolean hasEffect(ItemStack stack) {
             return false;
         }
     });
-    public static final RegistryObject<GunItem> AK74 = ITEM_REGISTRY.register("ak74", () -> new GunItem(new Item.Properties().maxStackSize(1).group(timeless_and_classic.MODERN_GROUP))
+    public static final RegistryObject<TimelessGunItem> AK74 = ITEM_REGISTRY.register("ak74", () -> new TimelessGunItem(new Item.Properties().maxStackSize(1).group(timeless_and_classic.MODERN_GROUP))
     {
         public boolean hasEffect(ItemStack stack) {
+            return false;
+        }
+    });
+    public static final RegistryObject<TimelessGunItem> M92FS = ITEM_REGISTRY.register("m92fs", () -> new TimelessGunItem(new Item.Properties().maxStackSize(1).group(timeless_and_classic.MODERN_GROUP))
+    {
+        public boolean hasEffect(ItemStack stack) {
+            return false;
+        }
+
+        @Override
+        public boolean onEntitySwing(ItemStack stack, LivingEntity entity) {
             return false;
         }
     });

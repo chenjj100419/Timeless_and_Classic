@@ -1,6 +1,6 @@
 {
   "general": {
-    "rate": 4,
+    "rate": 3,
     "gripType": "timeless_and_classic:one_handed_m1911",
     "maxAmmo": 16,
     "reloadAmount": 4,

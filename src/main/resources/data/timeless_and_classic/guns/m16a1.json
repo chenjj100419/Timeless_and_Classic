@@ -5,7 +5,7 @@
     "gripType": "timeless_and_classic:two_handed_ak47",
     "maxAmmo": 20,
     "reloadAmount": 5,
-    "recoilAngle": 1.35,
+    "recoilAngle": 1.15,
     "recoilKick": 0.75,
     "recoilAdsReduction": 0.55,
     "alwaysSpread": true,
