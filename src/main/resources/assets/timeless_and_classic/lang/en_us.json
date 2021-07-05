@@ -21,6 +21,12 @@
   "item.timeless_and_classic.sti2011": "STI 2011",
   "item.timeless_and_classic.ak74": "AK-74",
   "item.timeless_and_classic.m92fs": "M92FS",
+  "item.timeless_and_classic.nato_556_bullet": "5.56 Bullet",
+  "item.timeless_and_classic.nato_556_box_block": "Box of 5.56 Bullets",
+  "item.timeless_and_classic.9mm_box_block": "Box of 9mm Bullets (x24)",
+  "item.timeless_and_classic.9mm_round": "9mm Bullet",
+  "item.timeless_and_classic.ar_15_p": "AR-15 P",
+  "item.timeless_and_classic.ar_15_hellmouth": ".308 Hellmouth",
 
   "item.timeless_and_classic.timeless_workbench": "Rustic Workbench",
 
@@ -35,9 +41,13 @@
   "block.timeless_and_classic.box45": "Box of .45 ACP Bullets (x16)",
   "block.timeless_and_classic.magnumbox": "Box of .357 Magnum Bullets (x12)",
   "block.timeless_and_classic.win30-30box": "Box of .30-30 Winchester Bullets (x10)",
-  "block.timeless_and_classic.box_308-block": "Box of .308 Bullets (x50x7)",
+  "block.timeless_and_classic.box_308-block": "Box of .308 Bullets (x50)",
   "block.timeless_and_classic.timeless_workbench": "Rustic Workbench",
+  "block.timeless_and_classic.nato_556_box_block": "Box of 5.56 Bullets (x50)",
+  "block.timeless_and_classic.9mm_box_block": "Box of 9mm Bullets (x24)",
 
   "itemGroup.timeless_and_classic": "Timeless and Classics!",
-  "itemGroup.timeless_and_modern": "Timeless and Modern!"
+  "itemGroup.timeless_and_modern": "Timeless and Modern!",
+
+  "info.timeless_and_classic.auto": "This weapon is automatic!"
 }

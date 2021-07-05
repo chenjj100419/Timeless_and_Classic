@@ -1,5 +1,6 @@
 package timeless_and_classic.core;
 
+import com.mrcrayfish.guns.client.KeyBinds;
 import com.mrcrayfish.guns.client.render.gun.ModelOverrides;
 import com.mrcrayfish.guns.common.GripType;
 import net.minecraft.client.renderer.RenderType;
@@ -61,6 +62,17 @@ public class timeless_and_classic {
             return stack;
         }
     };
+    public static final ItemGroup AMMO_GROUP = new ItemGroup("timeless_and_ammunition") {
+        //Here we create the icon for the tab
+        //If you wanted a normal item here then you can just return an ItemStack
+        @Override
+        public ItemStack createIcon() {
+            //Get the Item in a new ItemStack
+            ItemStack stack = new ItemStack(ItemRegistry.BULLET_308.get());
+            //We now return the stack which has added ammunition
+            return stack;
+        }
+    };
     //What needs to be called the the event bus
     public timeless_and_classic() {
         //Here we add the config to the mod - remember to do this for the server and client if you have them
@@ -96,7 +108,6 @@ public class timeless_and_classic {
     }
 
     void clientSetup(FMLClientSetupEvent event) {
-        // RenderingRegistry.registerEntityRenderingHandler(EntityRegistry.DART.get(), DartEntityRenderer::new);
         ModelOverrides.register(ItemRegistry.M1911.get(), new m1911_animation());
         ModelOverrides.register(ItemRegistry.M1851.get(), new m1851_animation());
         ModelOverrides.register(ItemRegistry.M1928.get(), new m1928_animation());
@@ -111,17 +122,18 @@ public class timeless_and_classic {
         ModelOverrides.register(ItemRegistry.STI2011.get(), new sti2011_animation());
         ModelOverrides.register(ItemRegistry.AK74.get(), new ak74_animation());
         ModelOverrides.register(ItemRegistry.M92FS.get(), new m92fs_animation());
-
-
+        ModelOverrides.register(ItemRegistry.AR15_HELLMOUTH.get(), new ar15_hellmouth_animation());
+        ModelOverrides.register(ItemRegistry.AR15_P.get(), new ar15_p_animation());
 
         HClient.setup();
-
-
+        KeyBinds.register();
 
         RenderTypeLookup.setRenderLayer(TimelessBlocks.MAGNUMBOX.get(), RenderType.getCutout());
         RenderTypeLookup.setRenderLayer(TimelessBlocks.BOX_45.get(), RenderType.getCutout());
         RenderTypeLookup.setRenderLayer(TimelessBlocks.BOX_WIN_30.get(), RenderType.getCutout());
         RenderTypeLookup.setRenderLayer(TimelessBlocks.BOX_308.get(), RenderType.getCutout());
+        RenderTypeLookup.setRenderLayer(TimelessBlocks.BOX_556.get(), RenderType.getCutout());
+        RenderTypeLookup.setRenderLayer(TimelessBlocks.BOX_9.get(), RenderType.getCutout());
     }
 
 

@@ -12,7 +12,7 @@
     "spread": 1.25
   },
   "projectile": {
-    "item": "timeless_and_classic:bullet_308",
+    "item": "timeless_and_classic:nato_556_bullet",
     "visible": false,
     "damage": 6.0,
     "size": 0.2,
@@ -20,10 +20,10 @@
     "life": 750
   },
   "sounds": {
-    "fire": "cgm:item.pistol.fire",
+    "fire": "timeless_and_classic:item.fire_m16",
     "reload": "cgm:item.pistol.reload",
     "cock": "cgm:item.pistol.cock",
-    "silencedFire": "cgm:item.pistol.silenced_fire"
+    "silencedFire": "timeless_and_classic:item.fire_m16s"
   },
   "display": {
     "flash": {

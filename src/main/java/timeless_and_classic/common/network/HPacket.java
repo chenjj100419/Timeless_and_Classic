@@ -6,6 +6,7 @@ import net.minecraftforge.fml.LogicalSide;
 import net.minecraftforge.fml.network.FMLHandshakeHandler;
 import net.minecraftforge.fml.network.NetworkRegistry;
 import net.minecraftforge.fml.network.simple.SimpleChannel;
+import timeless_and_classic.common.network.messages.NotifiCraft;
 import timeless_and_classic.core.timeless_and_classic;
 
 

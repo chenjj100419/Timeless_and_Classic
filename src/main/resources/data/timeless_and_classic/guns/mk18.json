@@ -12,7 +12,7 @@
     "spread": 1.55
   },
   "projectile": {
-    "item": "timeless_and_classic:bullet_308",
+    "item": "timeless_and_classic:nato_556_bullet",
     "visible": false,
     "damage": 6.5,
     "size": 0.2,

@@ -11,9 +11,6 @@ import com.mrcrayfish.guns.item.GunItem;
 import com.mrcrayfish.guns.item.IAmmo;
 import com.mrcrayfish.guns.item.IColored;
 import com.mrcrayfish.guns.item.attachment.IAttachment;
-import com.mrcrayfish.guns.network.PacketHandler;
-
-import com.mrcrayfish.guns.network.message.MessageCraft;
 
 import com.mrcrayfish.guns.util.InventoryUtil;
 import net.minecraft.client.Minecraft;
@@ -42,7 +39,7 @@ import timeless_and_classic.client.render.tileentity.TimelessWorkbenchTileEntity
 import timeless_and_classic.client.TimelessWorkbenchContainer;
 import timeless_and_classic.common.network.HPacket;
 import timeless_and_classic.core.registry.ItemRegistry;
-import timeless_and_classic.common.network.NotifiCraft;
+import timeless_and_classic.common.network.messages.NotifiCraft;
 import timeless_and_classic.core.registry.TimelessBlocks;
 
 import java.awt.*;

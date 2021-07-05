@@ -1,0 +1,16 @@
+{
+  "type": "timeless_and_classic:timeless_workbench",
+  "result": {
+    "item": "timeless_and_classic:dp28"
+  },
+  "materials": [
+    {
+      "item": "minecraft:iron_ingot",
+      "count": 42
+    },
+    {
+      "item": "minecraft:acacia_log",
+      "count": 6
+    }
+  ]
+}

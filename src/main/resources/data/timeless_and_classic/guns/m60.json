@@ -5,11 +5,11 @@
     "gripType": "timeless_and_classic:two_handed_m60",
     "maxAmmo": 100,
     "reloadAmount": 10,
-    "recoilAngle": 1.8,
-    "recoilKick": 0.4,
-    "recoilAdsReduction": 0.74,
+    "recoilAngle": 2.30,
+    "recoilKick": 0.6,
+    "recoilAdsReduction": 0.64,
     "alwaysSpread": true,
-    "spread": 2.1
+    "spread": 4.16
   },
   "projectile": {
     "item": "timeless_and_classic:bullet_308",
@@ -20,7 +20,7 @@
     "life": 550
   },
   "sounds": {
-    "fire": "cgm:item.pistol.fire",
+    "fire": "timeless_and_classic:item.fire_m60",
     "reload": "cgm:item.pistol.reload",
     "cock": "cgm:item.pistol.cock",
     "silencedFire": "cgm:item.pistol.silenced_fire"

@@ -20,7 +20,7 @@
     "life": 250
   },
   "sounds": {
-    "fire": "cgm:item.assault_rifle.fire",
+    "fire": "timeless_and_classic:item.fire_30-30",
     "reload": "cgm:item.pistol.reload",
     "cock": "cgm:item.assault_rifle.cock",
     "silencedFire": "cgm:item.assault_rifle.silenced_fire"

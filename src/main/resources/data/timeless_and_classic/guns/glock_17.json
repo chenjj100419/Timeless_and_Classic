@@ -4,14 +4,14 @@
     "gripType": "timeless_and_classic:one_handed_m1911",
     "maxAmmo": 16,
     "reloadAmount": 4,
-    "recoilAngle": 4.4,
-    "recoilKick": 1.0,
+    "recoilAngle": 3.8,
+    "recoilKick": 1.75,
     "recoilAdsReduction": 0.40,
     "alwaysSpread": true,
     "spread": 1.8
   },
   "projectile": {
-    "item": "timeless_and_classic:round45",
+    "item": "timeless_and_classic:9mm_round",
     "visible": false,
     "damage": 5.0,
     "size": 0.2,
@@ -19,10 +19,10 @@
     "life": 350
   },
   "sounds": {
-    "fire": "timeless_and_classic:item.fire_m1911",
+    "fire": "timeless_and_classic:item.fire_glock",
     "reload": "cgm:item.pistol.reload",
     "cock": "cgm:item.pistol.cock",
-    "silencedFire": "timeless_and_classic:item.fire_m1911s"
+    "silencedFire": "timeless_and_classic:item.fire_glocks"
   },
   "display": {
     "flash": {
@@ -39,7 +39,7 @@
     },
     "attachments": {
       "barrel": {
-        "yOffset": -829.84,
+        "yOffset": -1829.84,
         "zOffset": -28.18,
         "scale": 1.00
       }

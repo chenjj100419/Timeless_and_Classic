@@ -28,6 +28,7 @@ import net.minecraft.util.text.TextFormatting;
 import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.World;
 import net.minecraftforge.registries.ForgeRegistries;
+import timeless_and_classic.core.Config;
 import timeless_and_classic.core.timeless_and_classic;
 
 public class TimelessGunItem extends GunItem {
@@ -69,12 +70,32 @@ public class TimelessGunItem extends GunItem {
                 tooltip.add((new TranslationTextComponent("info.cgm.ammo", new Object[]{TextFormatting.GOLD.toString() + ammoCount + "/" + GunEnchantmentHelper.getAmmoCapacity(stack, modifiedGun)})).mergeStyle(TextFormatting.DARK_GRAY));
             }
         }
+        boolean auto = modifiedGun.getGeneral().isAuto();
+        int autoRate = modifiedGun.getGeneral().getRate();
 
+        // modifiedGun.serializeNBT().remove("rate"); putInt("rate",modifiedGun.serializeNBT().getInt("rate")+1).;
+
+        if (auto)
+        {
+            tooltip.add((new TranslationTextComponent("info.timeless_and_classic.auto", new Object[]{TextFormatting.GOLD.toString() + "This weapon is automatic!"})).mergeStyle(TextFormatting.RED));
+        }
         tooltip.add((new TranslationTextComponent("info.cgm.attachment_help", new Object[]{(new KeybindTextComponent("key.cgm.attachments")).getString().toUpperCase(Locale.ENGLISH)})).mergeStyle(TextFormatting.YELLOW));
+
     }
 
     @Override
     public int getRGBDurabilityForDisplay(ItemStack stack) {
         return (Integer)Objects.requireNonNull(TextFormatting.GOLD.getColor());
+    }
+    @Override
+    public boolean showDurabilityBar(ItemStack stack)
+    {
+        if (Config.COMMON.ammoProgressBar.get()) {
+            CompoundNBT tagCompound = stack.getOrCreateTag();
+            Gun modifiedGun = this.getModifiedGun(stack);
+            return !tagCompound.getBoolean("IgnoreAmmo") && tagCompound.getInt("AmmoCount") != GunEnchantmentHelper.getAmmoCapacity(stack, modifiedGun);
+        }
+        else
+            return false;
     }
 }

@@ -40,7 +40,14 @@ public class OneHandedPoseHighRes_m1851 implements IHeldAnimation {
             centerOffset += hand == HandSide.RIGHT ? 0.2 : 0.8;
         }
         centerOffset = hand == HandSide.RIGHT ? -centerOffset : centerOffset;
-        matrixStack.translate(centerOffset * 0.0625, -0.45, 1.0);
+        if (Minecraft.getInstance().player.getSkinType().equals("slim"))
+        {
+            matrixStack.translate(centerOffset * 0.0755, -0.45, 1.0); // (1)^
+        }
+        else
+        {
+            matrixStack.translate(centerOffset * 0.0625, -0.45, 1.0); // (1)^
+        }
 
         matrixStack.rotate(Vector3f.XP.rotationDegrees(90F));
         matrixStack.scale(1.5F, 1.5F, 1.5F);

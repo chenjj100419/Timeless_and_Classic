@@ -5,25 +5,25 @@
     "gripType": "timeless_and_classic:two_handed_ak47",
     "maxAmmo": 30,
     "reloadAmount": 5,
-    "recoilAngle": 1.35,
+    "recoilAngle": 1.45,
     "recoilKick": 0.85,
     "recoilAdsReduction": 0.55,
     "alwaysSpread": true,
-    "spread": 1.95
+    "spread": 2.95
   },
   "projectile": {
-    "item": "timeless_and_classic:bullet_308",
+    "item": "timeless_and_classic:nato_556_bullet",
     "visible": false,
     "damage": 6.5,
     "size": 0.2,
-    "speed": 35.5,
-    "life": 750
+    "speed": 28.5,
+    "life": 250
   },
   "sounds": {
-    "fire": "cgm:item.pistol.fire",
+    "fire": "timeless_and_classic:item.fire_ak47",
     "reload": "cgm:item.pistol.reload",
     "cock": "cgm:item.pistol.cock",
-    "silencedFire": "cgm:item.pistol.silenced_fire"
+    "silencedFire": "timeless_and_classic:item.fire_ak74s"
   },
   "display": {
     "flash": {

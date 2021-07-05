@@ -19,7 +19,7 @@
     "life": 300
   },
   "sounds": {
-    "fire": "cgm:item.pistol.fire",
+    "fire": "timeless_and_classic:item.fire_m1851",
     "reload": "cgm:item.pistol.reload",
     "cock": "cgm:item.pistol.cock",
     "silencedFire": "cgm:item.pistol.silenced_fire"

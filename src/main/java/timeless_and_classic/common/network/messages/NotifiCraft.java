@@ -1,4 +1,4 @@
-package timeless_and_classic.common.network;
+package timeless_and_classic.common.network.messages;
 
 import com.mrcrayfish.guns.network.message.IMessage;
 import net.minecraft.entity.player.ServerPlayerEntity;
@@ -6,6 +6,7 @@ import net.minecraft.network.PacketBuffer;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraftforge.fml.network.NetworkEvent;
+import timeless_and_classic.common.network.ServerHandler;
 
 import java.util.function.Supplier;
 

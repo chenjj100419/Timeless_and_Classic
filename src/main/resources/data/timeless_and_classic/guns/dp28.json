@@ -9,7 +9,7 @@
     "recoilKick": 0.6,
     "recoilAdsReduction": 0.72,
     "alwaysSpread": true,
-    "spread": 2.2
+    "spread": 5.2
   },
   "projectile": {
     "item": "timeless_and_classic:bullet_308",
@@ -20,7 +20,7 @@
     "life": 250
   },
   "sounds": {
-    "fire": "cgm:item.pistol.fire",
+    "fire": "timeless_and_classic:item.fire_dp28",
     "reload": "cgm:item.pistol.reload",
     "cock": "cgm:item.pistol.cock",
     "silencedFire": "cgm:item.pistol.silenced_fire"

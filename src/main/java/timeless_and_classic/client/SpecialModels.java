@@ -70,7 +70,21 @@ public enum SpecialModels {
     M92FS("m92fs"),
     M92FS_SLIDE("m92fs_slide"),
     M92FS_STANDARD_MAG("m92fs_standard_mag"),
-    M92FS_EXTENDED_MAG("m92fs_extended_mag");
+    M92FS_EXTENDED_MAG("m92fs_extended_mag"),
+    AR15_HELLMOUTH_BODY("ar_15_hellmouth_body"),
+    AR15_HELLMOUTH_BUTT_HEAVY("ar_15_hellmouth_butt_heavy"),
+    AR15_HELLMOUTH_BUTT_LIGHTWEIGHT("ar_15_hellmouth_butt_lightweight"),
+    AR15_HELLMOUTH_SUPPRESSOR("ar_15_hellmouth_suppressor"),
+    AR15_HELLMOUTH_MUZZLE("ar_15_hellmouth_muzzle"),
+    AR15_HELLMOUTH_BUTT_TACTICAL("ar_15_hellmouth_butt_tactical"),
+    AR15_HELLMOUTH_TACTICAL_GRIP("ar_15_hellmouth_tactical_grip"),
+    AR15_HELLMOUTH_LIGHTWEIGHT_GRIP("ar_15_hellmouth_lightweight_grip"),
+    AR15_P_BODY("ar_15_p_body"),
+    AR15_P_IRONS("ar_15_p_irons"),
+    AR15_P_MUZZLE("ar_15_p_muzzle"),
+    AR15_P_SUPPRESSOR("ar_15_p_suppressor"),
+    AR15_P_TACTICAL_GRIP("ar_15_p_tactical_grip"),
+    AR15_BOLT("ar_15_bolt");
 
     //Variables
     private final ResourceLocation modelLocation;

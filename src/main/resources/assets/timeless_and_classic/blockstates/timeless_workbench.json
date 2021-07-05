@@ -2,19 +2,19 @@
   "variants": {
     "facing=north": {
       "model": "timeless_and_classic:block/timeless_workbench",
-      "y": -90
+      "y": 0
     },
     "facing=east": {
       "model": "timeless_and_classic:block/timeless_workbench",
-      "y": 0
+      "y": -270
     },
     "facing=south": {
       "model": "timeless_and_classic:block/timeless_workbench",
-      "y": -270
+      "y": -180
     },
     "facing=west": {
       "model": "timeless_and_classic:block/timeless_workbench",
-      "y": -180
+      "y": -90
     }
   }
 }

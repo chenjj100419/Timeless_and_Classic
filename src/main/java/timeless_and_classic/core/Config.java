@@ -21,12 +21,23 @@ public class Config {
      */
     public static class Common {
         //Initialise our value
-        public final ForgeConfigSpec.IntValue dartLossChance;
+        public ForgeConfigSpec.BooleanValue ammoProgressBar;
+
+        // Limit the Trigger finger enchantment on each weapon
+        public ForgeConfigSpec.IntValue M1928_trigMax;
+        public ForgeConfigSpec.IntValue AK47_trigMax;
+        public ForgeConfigSpec.IntValue M60_trigMax;
+        public ForgeConfigSpec.IntValue DP28_trigMax;
+        public ForgeConfigSpec.IntValue M16A1_trigMax;
+        public ForgeConfigSpec.IntValue AK74_trigMax;
+        public ForgeConfigSpec.IntValue AR15P_trigMax;
+        public ForgeConfigSpec.IntValue AR15HM_trigMax;
 
         //Constructor for the Common Config
         Common(ForgeConfigSpec.Builder builder) {
+
             //What we will be pushing to the config, this has a title of common
-            builder.push("common");
+            builder.push("client");
             {
                 /*
                  * We can then add a comment (highly recommended) to inform the user what they are changing.
@@ -34,10 +45,21 @@ public class Config {
                  * Then in the case of an integer we need to set the range.
                  * This takes in the path (what it will be called). The default value. The minimum value. Then the max value.
                  */
-                this.dartLossChance = builder.comment("The chance of a dart being lost when shot is 1/this number").defineInRange("dartLossMinimum", 20, 0, Integer.MAX_VALUE);
+                this.ammoProgressBar = builder.comment("Show the durabilityBar indicating ammo count per weapon").define("durabilityBar", true);
             }
             //Remember to pop this section
             builder.pop();
+            builder.push("common");
+            {
+                this.M1928_trigMax = builder.comment("Maximum level of the Trigger Finger enchantment allowed on a weapon").defineInRange("m1928_trigMax", 0, 0, 10);
+                this.AK47_trigMax = builder.comment("Maximum level of the Trigger Finger enchantment allowed on a weapon").defineInRange("ak47_trigMax", 1, 0, 10);
+                this.M60_trigMax = builder.comment("Maximum level of the Trigger Finger enchantment allowed on a weapon").defineInRange("m60_trigMax", 0, 0, 10);
+                this.DP28_trigMax = builder.comment("Maximum level of the Trigger Finger enchantment allowed on a weapon").defineInRange("dp28_trigMax", 1, 0, 10);
+                this.M16A1_trigMax = builder.comment("Maximum level of the Trigger Finger enchantment allowed on a weapon").defineInRange("m16a1_trigMax", 1, 0, 10);
+                this.AK74_trigMax = builder.comment("Maximum level of the Trigger Finger enchantment allowed on a weapon").defineInRange("ak74_trigMax", 1, 0, 10);
+                this.AR15HM_trigMax = builder.comment("Maximum level of the Trigger Finger enchantment allowed on a weapon").defineInRange("ar15hm_trigMax", 0, 0, 10);
+                this.AR15P_trigMax = builder.comment("Maximum level of the Trigger Finger enchantment allowed on a weapon").defineInRange("ar15p_trigMax", 0, 0, 10);
+            }
         }
     }
 

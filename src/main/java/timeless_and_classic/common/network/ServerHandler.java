@@ -7,12 +7,15 @@ import net.minecraft.inventory.InventoryHelper;
 import net.minecraft.item.DyeItem;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.SoundCategory;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import timeless_and_classic.client.handlers.TimelessWorkbenchRecipeH;
 import timeless_and_classic.client.handlers.TimelessWorkbenchRecipes;
 import timeless_and_classic.client.render.tileentity.TimelessWorkbenchTileEntity;
 import timeless_and_classic.client.TimelessWorkbenchContainer;
+import timeless_and_classic.core.registry.SoundRegistry;
+import timeless_and_classic.core.types.TimelessGunItem;
 
 import java.util.List;
 
@@ -23,6 +26,15 @@ import java.util.List;
 
 public class ServerHandler
 {
+    public static void handleUnjam(ServerPlayerEntity player) {
+        ItemStack stack = player.getHeldItemMainhand();
+        if(stack.getItem() instanceof TimelessGunItem) {
+            if(stack.getTag().getBoolean("isJammed")) {
+                stack.getTag().remove("isJammed");
+                player.playSound(SoundRegistry.M60_FIRE.get(), SoundCategory.PLAYERS, 1F, 1F);
+            }
+        }
+    }
     public static void handleCraft(ServerPlayerEntity player, ResourceLocation id, BlockPos pos)
     {
         World world = player.world;

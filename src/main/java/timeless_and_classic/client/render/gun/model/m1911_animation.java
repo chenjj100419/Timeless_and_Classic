@@ -32,7 +32,7 @@ public class m1911_animation implements IOverrideModel {
         matrices.translate(0.01, 0.1, -0.1);
         matrices.rotate(Vector3f.YP.rotationDegrees(-0.5F));
 
-        if(EnchantmentHelper.getEnchantmentLevel(ModEnchantments.OVER_CAPACITY.get(), entity.getHeldItemMainhand()) > 0 && entity.getHeldItemMainhand().isItemEqual(stack))
+        if(EnchantmentHelper.getEnchantmentLevel(ModEnchantments.OVER_CAPACITY.get(), stack) > 0)
         {
             RenderUtil.renderModel(SpecialModels.M1911_LONG_MAG.getModel(), stack, matrices, renderBuffer, light, overlay);
         }
@@ -66,7 +66,7 @@ public class m1911_animation implements IOverrideModel {
                 matrices.translate(0, 0, 0.260f * (-4.5 * Math.pow(0.5-0.5, 2) + 1.0));
             }
         }
-
+            matrices.translate(0.00, 0.0, -0.008);
             RenderUtil.renderModel(SpecialModels.M1911_SLIDE.getModel(), stack, matrices, renderBuffer, light, overlay);
 
             //Always pop

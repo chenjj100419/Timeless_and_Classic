@@ -1,17 +1,26 @@
 package timeless_and_classic.core.registry;
 
 import com.mrcrayfish.guns.common.Gun;
+import com.mrcrayfish.guns.init.ModEnchantments;
 import com.mrcrayfish.guns.item.AmmoItem;
 import com.mrcrayfish.guns.item.GunItem;
+import net.minecraft.enchantment.Enchantment;
+import net.minecraft.enchantment.EnchantmentHelper;
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.world.World;
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
+import timeless_and_classic.core.Config;
 import timeless_and_classic.core.timeless_and_classic;
 import timeless_and_classic.core.types.TimelessGunItem;
+
+import java.util.Map;
 
 
 /**
@@ -94,9 +103,28 @@ public class ItemRegistry {
         return false;
     }});
 
-    public static final RegistryObject<TimelessGunItem> M1928 = ITEM_REGISTRY.register("m1928", () -> new TimelessGunItem(new Item.Properties().maxStackSize(1).group(timeless_and_classic.GROUP)){ public boolean hasEffect(ItemStack stack) {
-        return false;
-    }});
+    public static final RegistryObject<TimelessGunItem> M1928 = ITEM_REGISTRY.register("m1928", () -> new TimelessGunItem(new Item.Properties().maxStackSize(1).group(timeless_and_classic.GROUP))
+    {
+        public boolean hasEffect(ItemStack stack) {
+            return false;
+        }
+
+        @Override
+        public void inventoryTick(ItemStack stack, World worldIn, Entity entityIn, int itemSlot, boolean isSelected)
+        {
+            Map<Enchantment, Integer> x =  EnchantmentHelper.deserializeEnchantments(stack.getEnchantmentTagList());
+            if(Config.COMMON.M1928_trigMax.get() == 0)
+            {
+                x.remove(ModEnchantments.TRIGGER_FINGER.get());
+            }
+            else if (EnchantmentHelper.getEnchantmentLevel(ModEnchantments.TRIGGER_FINGER.get(), stack) > Config.COMMON.M1928_trigMax.get().intValue())
+            {
+                x.remove(ModEnchantments.TRIGGER_FINGER.get());
+                x.put(ModEnchantments.TRIGGER_FINGER.get(), Config.COMMON.M1928_trigMax.get().intValue());
+            }
+            EnchantmentHelper.setEnchantments(x, stack);
+        }
+    });
 
     public static final RegistryObject<TimelessGunItem> MOSIN = ITEM_REGISTRY.register("mosin", () -> new TimelessGunItem(new Item.Properties().maxStackSize(1).group(timeless_and_classic.GROUP)){ public boolean hasEffect(ItemStack stack) {
         return false;
@@ -107,11 +135,43 @@ public class ItemRegistry {
         public boolean hasEffect(ItemStack stack) {
             return false;
         }
+
+        @Override
+        public void inventoryTick(ItemStack stack, World worldIn, Entity entityIn, int itemSlot, boolean isSelected)
+        {
+            Map<Enchantment, Integer> x =  EnchantmentHelper.deserializeEnchantments(stack.getEnchantmentTagList());
+            if(Config.COMMON.AK47_trigMax.get() == 0)
+            {
+                x.remove(ModEnchantments.TRIGGER_FINGER.get());
+            }
+            else if (EnchantmentHelper.getEnchantmentLevel(ModEnchantments.TRIGGER_FINGER.get(), stack) > Config.COMMON.AK47_trigMax.get().intValue())
+            {
+                x.remove(ModEnchantments.TRIGGER_FINGER.get());
+                x.put(ModEnchantments.TRIGGER_FINGER.get(), Config.COMMON.AK47_trigMax.get().intValue());
+            }
+            EnchantmentHelper.setEnchantments(x, stack);
+        }
     });
     public static final RegistryObject<TimelessGunItem> M60 = ITEM_REGISTRY.register("m60", () -> new TimelessGunItem(new Item.Properties().maxStackSize(1).group(timeless_and_classic.GROUP))
     {
         public boolean hasEffect(ItemStack stack) {
             return false;
+        }
+
+        @Override
+        public void inventoryTick(ItemStack stack, World worldIn, Entity entityIn, int itemSlot, boolean isSelected)
+        {
+            Map<Enchantment, Integer> x =  EnchantmentHelper.deserializeEnchantments(stack.getEnchantmentTagList());
+            if(Config.COMMON.M60_trigMax.get() == 0)
+            {
+                x.remove(ModEnchantments.TRIGGER_FINGER.get());
+            }
+            else if (EnchantmentHelper.getEnchantmentLevel(ModEnchantments.TRIGGER_FINGER.get(), stack) > Config.COMMON.M60_trigMax.get().intValue())
+            {
+                x.remove(ModEnchantments.TRIGGER_FINGER.get());
+                x.put(ModEnchantments.TRIGGER_FINGER.get(), Config.COMMON.M60_trigMax.get().intValue());
+            }
+            EnchantmentHelper.setEnchantments(x, stack);
         }
     });
     public static final RegistryObject<TimelessGunItem> M1917 = ITEM_REGISTRY.register("m1917", () -> new TimelessGunItem(new Item.Properties().maxStackSize(1))//.group(timeless_and_classic.GROUP))
@@ -125,17 +185,71 @@ public class ItemRegistry {
         public boolean hasEffect(ItemStack stack) {
             return false;
         }
+/*
+        @Override
+        public void inventoryTick(ItemStack stack, World worldIn, Entity entityIn, int itemSlot, boolean isSelected)
+        {
+            if (EnchantmentHelper.getEnchantmentLevel(ModEnchantments.TRIGGER_FINGER.get(), stack) > 0)
+            {
+                Map<Enchantment, Integer> x =  EnchantmentHelper.deserializeEnchantments(stack.getEnchantmentTagList());
+                CompoundNBT y = stack.serializeNBT();
+
+                if (x.containsKey(ModEnchantments.TRIGGER_FINGER.get()) == true)
+                {
+                    if (y.getBoolean("Auto") == false)
+                    {
+                        y.remove("Auto");
+                        y.putBoolean("Auto",true);
+                    }
+                }
+                stack.deserializeNBT(y);
+            }
+        }
+
+ */
     });
     public static final RegistryObject<TimelessGunItem> DP_28 = ITEM_REGISTRY.register("dp28", () -> new TimelessGunItem(new Item.Properties().maxStackSize(1).group(timeless_and_classic.GROUP))
     {
         public boolean hasEffect(ItemStack stack) {
             return false;
         }
+
+        @Override
+        public void inventoryTick(ItemStack stack, World worldIn, Entity entityIn, int itemSlot, boolean isSelected)
+        {
+            Map<Enchantment, Integer> x =  EnchantmentHelper.deserializeEnchantments(stack.getEnchantmentTagList());
+            if(Config.COMMON.DP28_trigMax.get() == 0)
+            {
+                x.remove(ModEnchantments.TRIGGER_FINGER.get());
+            }
+            else if (EnchantmentHelper.getEnchantmentLevel(ModEnchantments.TRIGGER_FINGER.get(), stack) > Config.COMMON.DP28_trigMax.get().intValue())
+            {
+                x.remove(ModEnchantments.TRIGGER_FINGER.get());
+                x.put(ModEnchantments.TRIGGER_FINGER.get(), Config.COMMON.DP28_trigMax.get().intValue());
+            }
+            EnchantmentHelper.setEnchantments(x, stack);
+        }
     });
     public static final RegistryObject<TimelessGunItem> M16A1 = ITEM_REGISTRY.register("m16a1", () -> new TimelessGunItem(new Item.Properties().maxStackSize(1).group(timeless_and_classic.GROUP))
     {
         public boolean hasEffect(ItemStack stack) {
             return false;
+        }
+
+        @Override
+        public void inventoryTick(ItemStack stack, World worldIn, Entity entityIn, int itemSlot, boolean isSelected)
+        {
+            Map<Enchantment, Integer> x =  EnchantmentHelper.deserializeEnchantments(stack.getEnchantmentTagList());
+            if(Config.COMMON.M16A1_trigMax.get() == 0)
+            {
+                x.remove(ModEnchantments.TRIGGER_FINGER.get());
+            }
+            else if (EnchantmentHelper.getEnchantmentLevel(ModEnchantments.TRIGGER_FINGER.get(), stack) > Config.COMMON.M16A1_trigMax.get().intValue())
+            {
+                x.remove(ModEnchantments.TRIGGER_FINGER.get());
+                x.put(ModEnchantments.TRIGGER_FINGER.get(), Config.COMMON.M16A1_trigMax.get().intValue());
+            }
+            EnchantmentHelper.setEnchantments(x, stack);
         }
     });
     public static final RegistryObject<TimelessGunItem> MK18 = ITEM_REGISTRY.register("mk18", () -> new TimelessGunItem(new Item.Properties().maxStackSize(1))//.group(timeless_and_classic.MODERN_GROUP))
@@ -155,22 +269,79 @@ public class ItemRegistry {
         public boolean hasEffect(ItemStack stack) {
             return false;
         }
+
+        @Override
+        public void inventoryTick(ItemStack stack, World worldIn, Entity entityIn, int itemSlot, boolean isSelected)
+        {
+            Map<Enchantment, Integer> x =  EnchantmentHelper.deserializeEnchantments(stack.getEnchantmentTagList());
+            if(Config.COMMON.AK74_trigMax.get() == 0)
+            {
+                x.remove(ModEnchantments.TRIGGER_FINGER.get());
+            }
+            else if(EnchantmentHelper.getEnchantmentLevel(ModEnchantments.TRIGGER_FINGER.get(), stack) > Config.COMMON.AK74_trigMax.get().intValue())
+            {
+                x.remove(ModEnchantments.TRIGGER_FINGER.get());
+                x.put(ModEnchantments.TRIGGER_FINGER.get(), Config.COMMON.AK74_trigMax.get().intValue());
+            }
+            EnchantmentHelper.setEnchantments(x, stack);
+        }
     });
     public static final RegistryObject<TimelessGunItem> M92FS = ITEM_REGISTRY.register("m92fs", () -> new TimelessGunItem(new Item.Properties().maxStackSize(1).group(timeless_and_classic.MODERN_GROUP))
     {
         public boolean hasEffect(ItemStack stack) {
             return false;
         }
+    });
+    public static final RegistryObject<TimelessGunItem> AR15_HELLMOUTH = ITEM_REGISTRY.register("ar_15_hellmouth", () -> new TimelessGunItem(new Item.Properties().maxStackSize(1).group(timeless_and_classic.MODERN_GROUP))
+    {
+        public boolean hasEffect(ItemStack stack) {
+            return false;
+        }
 
         @Override
-        public boolean onEntitySwing(ItemStack stack, LivingEntity entity) {
+        public void inventoryTick(ItemStack stack, World worldIn, Entity entityIn, int itemSlot, boolean isSelected)
+        {
+            Map<Enchantment, Integer> x =  EnchantmentHelper.deserializeEnchantments(stack.getEnchantmentTagList());
+            if(Config.COMMON.AR15HM_trigMax.get() == 0)
+            {
+                x.remove(ModEnchantments.TRIGGER_FINGER.get());
+            }
+            else if (EnchantmentHelper.getEnchantmentLevel(ModEnchantments.TRIGGER_FINGER.get(), stack) > Config.COMMON.AR15HM_trigMax.get().intValue())
+            {
+                x.remove(ModEnchantments.TRIGGER_FINGER.get());
+                x.put(ModEnchantments.TRIGGER_FINGER.get(), Config.COMMON.AR15HM_trigMax.get().intValue());
+            }
+            EnchantmentHelper.setEnchantments(x, stack);
+        }
+    });
+    public static final RegistryObject<TimelessGunItem> AR15_P = ITEM_REGISTRY.register("ar_15_p", () -> new TimelessGunItem(new Item.Properties().maxStackSize(1).group(timeless_and_classic.MODERN_GROUP))
+    {
+        public boolean hasEffect(ItemStack stack) {
             return false;
+        }
+
+        @Override
+        public void inventoryTick(ItemStack stack, World worldIn, Entity entityIn, int itemSlot, boolean isSelected)
+        {
+            Map<Enchantment, Integer> x =  EnchantmentHelper.deserializeEnchantments(stack.getEnchantmentTagList());
+            if(Config.COMMON.AR15P_trigMax.get() == 0)
+            {
+                x.remove(ModEnchantments.TRIGGER_FINGER.get());
+            }
+            else if (EnchantmentHelper.getEnchantmentLevel(ModEnchantments.TRIGGER_FINGER.get(), stack) > Config.COMMON.AR15P_trigMax.get().intValue())
+            {
+                x.remove(ModEnchantments.TRIGGER_FINGER.get());
+                x.put(ModEnchantments.TRIGGER_FINGER.get(), Config.COMMON.AR15P_trigMax.get().intValue());
+            }
+            EnchantmentHelper.setEnchantments(x, stack);
         }
     });
     // Here I also create some new Ammunition for my mod! Not a necessary piece as you can continue using the original "cgm:" ammo!
-    public static final RegistryObject<AmmoItem> MAGNUM_BULLET = ITEM_REGISTRY.register("magnumround", () -> new AmmoItem(new Item.Properties().maxStackSize(64).group(timeless_and_classic.GROUP)));
-    public static final RegistryObject<AmmoItem> BULLET_45 = ITEM_REGISTRY.register("round45", () -> new AmmoItem(new Item.Properties().maxStackSize(64).group(timeless_and_classic.GROUP)));
-    public static final RegistryObject<AmmoItem> BULLET_30_WIN = ITEM_REGISTRY.register("win_30-30", () -> new AmmoItem(new Item.Properties().maxStackSize(64).group(timeless_and_classic.GROUP)));
-    public static final RegistryObject<AmmoItem> BULLET_308 = ITEM_REGISTRY.register("bullet_308", () -> new AmmoItem(new Item.Properties().maxStackSize(64).group(timeless_and_classic.GROUP)));
+    public static final RegistryObject<AmmoItem> MAGNUM_BULLET = ITEM_REGISTRY.register("magnumround", () -> new AmmoItem(new Item.Properties().maxStackSize(64).group(timeless_and_classic.AMMO_GROUP)));
+    public static final RegistryObject<AmmoItem> BULLET_45 = ITEM_REGISTRY.register("round45", () -> new AmmoItem(new Item.Properties().maxStackSize(64).group(timeless_and_classic.AMMO_GROUP)));
+    public static final RegistryObject<AmmoItem> BULLET_30_WIN = ITEM_REGISTRY.register("win_30-30", () -> new AmmoItem(new Item.Properties().maxStackSize(64).group(timeless_and_classic.AMMO_GROUP)));
+    public static final RegistryObject<AmmoItem> BULLET_308 = ITEM_REGISTRY.register("bullet_308", () -> new AmmoItem(new Item.Properties().maxStackSize(64).group(timeless_and_classic.AMMO_GROUP)));
+    public static final RegistryObject<AmmoItem> BULLET_556 = ITEM_REGISTRY.register("nato_556_bullet", () -> new AmmoItem(new Item.Properties().maxStackSize(64).group(timeless_and_classic.AMMO_GROUP)));
+    public static final RegistryObject<AmmoItem> BULLET_9 = ITEM_REGISTRY.register("9mm_round", () -> new AmmoItem(new Item.Properties().maxStackSize(64).group(timeless_and_classic.AMMO_GROUP)));
 
 }
